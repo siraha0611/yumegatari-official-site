@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ドメインは仮でGitHub Pages既定URL(https://siraha0611.github.io/yumegatari-official-site/)を使用。
-     独自ドメインを取得した場合は、以下のURLとrobots.txtのSitemap行を差し替えること。 -->
+     独自ドメインを取得した場合は、以下のURLとrobots.txtのSitemap行を差し替えること。
+     ho1〜ho4(秘匿ページ)は意図的に含めていない。 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://siraha0611.github.io/yumegatari-official-site/</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/before-session.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/story.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/overview.html</loc></url>
   <url><loc>https://siraha0611.github.io/yumegatari-official-site/characters.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/keyword.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/handout.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/before-session.html</loc></url>
   <url><loc>https://siraha0611.github.io/yumegatari-official-site/kp-guide.html</loc></url>
   <url><loc>https://siraha0611.github.io/yumegatari-official-site/scenario.html</loc></url>
 </urlset>

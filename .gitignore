@@ -1,2 +1,7 @@
 .DS_Store
 Thumbs.db
+
+# 秘匿HOの平文ソースとパスワード控えは公開リポジトリに含めない(ローカル管理)
+_ho_src/
+_passwords.md
+node_modules/
