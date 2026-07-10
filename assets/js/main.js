@@ -11,35 +11,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- ヒーロータイトルの一字ずつ浮かび上がり ---------- */
-  var heroTitle = document.querySelector(".hero-title");
-  if (heroTitle && !reduceMotion) {
-    var text = heroTitle.textContent;
-    heroTitle.textContent = "";
-    var delay = 0.15;
-    for (var i = 0; i < text.length; i++) {
-      var c = text[i];
-      if (c === "\n" || c === " " || c === "　") {
-        heroTitle.appendChild(document.createTextNode(c));
-        continue;
-      }
-      var span = document.createElement("span");
-      span.className = "ch";
-      span.textContent = c;
-      span.style.animationDelay = delay.toFixed(2) + "s";
-      delay += 0.05;
-      heroTitle.appendChild(span);
-    }
-    // タイトルの後に続く要素は遅れてふわっと
-    var late = [
+  /* ---------- 見出しの行マスクリビール ----------
+     テキストを改行で行に分割し、各行をoverflow:hiddenの箱(.ln)+
+     下から迫り上がる中身(.ln-i)に包む。CSSのlnInが実体。 */
+  function splitLines(el, baseDelay, step) {
+    if (!el || reduceMotion) return 0;
+    var lines = el.textContent.split("\n");
+    el.textContent = "";
+    var d = baseDelay;
+    lines.forEach(function (line) {
+      var ln = document.createElement("span");
+      ln.className = "ln";
+      var inner = document.createElement("span");
+      inner.className = "ln-i";
+      inner.textContent = line.length ? line : " ";
+      inner.style.animationDelay = d.toFixed(2) + "s";
+      d += step;
+      ln.appendChild(inner);
+      el.appendChild(ln);
+    });
+    return d;
+  }
+
+  var heroEnd = splitLines(document.querySelector(".hero-title"), 0.25, 0.16);
+  splitLines(document.querySelector(".page-hero h1"), 0.1, 0.14);
+
+  // ヒーロータイトル後続要素は遅れてふわっと
+  if (heroEnd) {
+    [
+      document.querySelector(".hero-en"),
       document.querySelector(".hero-sub"),
       document.querySelector(".hero-tagline"),
       document.querySelector(".hero .cta-row")
-    ];
-    late.forEach(function (el, idx) {
+    ].forEach(function (el, idx) {
       if (!el) return;
       el.classList.add("fade-late");
-      el.style.animationDelay = (delay + 0.15 + idx * 0.25).toFixed(2) + "s";
+      el.style.animationDelay = (heroEnd + 0.2 + idx * 0.22).toFixed(2) + "s";
     });
   }
 
@@ -60,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ".ho-card", ".ho-hub-card", ".story-lead", ".story-block", ".story-divider",
     ".spec-list li", ".recommend-list li", ".badge-row", ".price-block",
     ".gallery-strip figure", ".notice", ".note-box", ".prose",
-    ".tagline-badge", ".hero-banner", ".cta-row"
+    ".tagline-badge", ".hero-banner", ".cta-row", ".kp-fig"
   ].join(",");
   var targets = Array.prototype.filter.call(
     document.querySelectorAll(selector),
