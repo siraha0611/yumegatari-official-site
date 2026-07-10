@@ -649,6 +649,24 @@ section.alt{ background: var(--bg-deep); }
   font-size: 0.94rem;
   white-space: pre-line;
 }
+.kp-fig{
+  max-width: 700px;
+  margin: 20px auto 30px;
+}
+.kp-fig.narrow{ max-width: 380px; }
+.kp-fig img{
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.kp-fig figcaption{
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--cream-dim);
+  margin-top: 8px;
+  font-family: var(--serif);
+}
 .spoiler-banner{
   max-width: 760px;
   margin: 0 auto 30px;
