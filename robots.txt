@@ -4,5 +4,6 @@ Disallow: /ho1.html
 Disallow: /ho2.html
 Disallow: /ho3.html
 Disallow: /ho4.html
+Disallow: /truth.html
 
 Sitemap: https://siraha0611.github.io/yumegatari-official-site/sitemap.xml
