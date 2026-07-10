@@ -737,26 +737,28 @@ section.alt{ background: var(--bg-deep); }
 
 /* ---------- story page ---------- */
 .story-lead{
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto;
   font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 2.4;
+  font-size: 1.12rem;
+  line-height: 2.6;
   white-space: pre-line;
   color: var(--cream);
   text-align: center;
 }
 .story-block{
-  max-width: 660px;
+  max-width: 680px;
   margin: 0 auto;
   font-family: var(--serif);
-  line-height: 2.2;
+  font-size: 1.05rem;
+  line-height: 2.6;
   white-space: pre-line;
   color: var(--cream);
+  text-align: center;
 }
 .story-divider{
   width: 120px;
-  margin: 50px auto;
+  margin: 70px auto;
   border: none;
   border-top: 1px solid var(--border);
   position: relative;
@@ -770,6 +772,69 @@ section.alt{ background: var(--bg-deep); }
   padding: 0 12px;
   color: var(--gold-soft);
   font-size: 0.9rem;
+}
+
+/* ---------- 霧の舞台(STORY)──煙の中から文字が立ち上がる ---------- */
+.story-stage{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #221a0e 0%, #1a140d 45%, #221a0e 100%);
+  padding: 110px 0 130px;
+}
+.story-stage .story-lead,
+.story-stage .story-block{ color: #efe6d2; }
+.story-stage .story-divider{ border-top-color: rgba(224,194,122,0.3); }
+.story-stage .story-divider::after{
+  background: #1d1710;
+  color: rgba(224,194,122,0.8);
+}
+/* 漂う霧レイヤー(2枚を別速度で対流) */
+.fog-layer{
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 30% at 22% 34%, rgba(242,234,216,0.10), transparent 70%),
+    radial-gradient(30% 26% at 74% 58%, rgba(224,194,122,0.08), transparent 70%),
+    radial-gradient(42% 30% at 52% 86%, rgba(242,234,216,0.07), transparent 70%);
+  filter: blur(34px);
+  animation: fogDrift 46s ease-in-out infinite alternate;
+}
+.fog-layer.f2{
+  background:
+    radial-gradient(32% 26% at 68% 22%, rgba(242,234,216,0.08), transparent 70%),
+    radial-gradient(40% 32% at 30% 72%, rgba(224,194,122,0.07), transparent 70%);
+  animation-duration: 64s;
+  animation-direction: alternate-reverse;
+}
+@keyframes fogDrift{
+  from{ transform: translate3d(-3%, -2%, 0) scale(1); }
+  to{ transform: translate3d(3%, 2%, 0) scale(1.08); }
+}
+/* 行ごとの「煙から凝縮」リビール(JSが[data-fog]を行分割) */
+.fog-ln{
+  display: block;
+  opacity: 0;
+  filter: blur(13px);
+  transform: translateY(28px);
+  letter-spacing: 0.13em;
+  transition:
+    opacity 1.9s var(--ease-out),
+    filter 1.9s var(--ease-out),
+    transform 1.9s var(--ease-out),
+    letter-spacing 2.4s var(--ease-out);
+  transition-delay: var(--fog-delay, 0s);
+  will-change: opacity, filter, transform;
+}
+.fog-ln.in{
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  letter-spacing: 0.05em;
+}
+@media (prefers-reduced-motion: reduce){
+  .fog-layer{ animation: none; }
+  .fog-ln{ opacity: 1; filter: none; transform: none; letter-spacing: 0.05em; transition: none; }
 }
 
 /* ---------- keyword page ---------- */

@@ -61,6 +61,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /* ---------- 煙から立ち上がる行リビール([data-fog]) ----------
+     テキストを行に分割し、スクロールで各行がブラー+字間の凝縮を
+     ともないながら、ゆっくり立ち上がる。 */
+  var fogEls = document.querySelectorAll("[data-fog]");
+  if (fogEls.length && !reduceMotion && "IntersectionObserver" in window) {
+    var fogLines = [];
+    fogEls.forEach(function (el) {
+      var lines = el.textContent.split("\n");
+      el.textContent = "";
+      var idx = 0;
+      lines.forEach(function (line) {
+        var ln = document.createElement("span");
+        ln.className = "fog-ln";
+        if (line.trim().length) {
+          ln.textContent = line;
+          ln.style.setProperty("--fog-delay", ((idx % 5) * 0.22).toFixed(2) + "s");
+          idx++;
+          fogLines.push(ln);
+        } else {
+          ln.innerHTML = "&nbsp;";
+          ln.classList.add("in");
+        }
+        el.appendChild(ln);
+      });
+    });
+    /* スクロール判定方式:
+       ビューポート下端の少し手前を越えた行(通過済み含む)を順に現す。
+       iframe埋め込みではIntersectionObserverのrootMarginが無効化される
+       ため、rectベースで自前判定する。 */
+    var pending = fogLines.slice();
+    var fogTimer = null;
+    function viewportH() {
+      return window.innerHeight
+        || document.documentElement.clientHeight
+        || (window.visualViewport && window.visualViewport.height)
+        || 800;
+    }
+    function checkFog() {
+      var limit = viewportH() * 0.92;
+      for (var i = pending.length - 1; i >= 0; i--) {
+        if (pending[i].getBoundingClientRect().top < limit) {
+          pending[i].classList.add("in");
+          pending.splice(i, 1);
+        }
+      }
+      if (!pending.length) {
+        window.removeEventListener("scroll", onFogScroll);
+        window.removeEventListener("resize", onFogScroll);
+        if (fogTimer) clearInterval(fogTimer);
+      }
+    }
+    var fogTick = false;
+    function onFogScroll() {
+      if (fogTick) return;
+      fogTick = true;
+      requestAnimationFrame(function () { fogTick = false; checkFog(); });
+    }
+    window.addEventListener("scroll", onFogScroll, { passive: true });
+    window.addEventListener("resize", onFogScroll, { passive: true });
+    /* scrollイベントが届かない埋め込み環境向けの保険(全行表示済みで自動停止) */
+    fogTimer = setInterval(checkFog, 450);
+    checkFog();
+  }
+
   /* ---------- スクロール連動フェードイン ---------- */
   var selector = [
     ".section-head", ".link-card", ".card", ".kw-item", ".chara-entry",
@@ -71,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ].join(",");
   var targets = Array.prototype.filter.call(
     document.querySelectorAll(selector),
-    function (el) { return !el.closest(".hero"); }
+    function (el) { return !el.closest(".hero") && !el.hasAttribute("data-fog"); }
   );
 
   if (reduceMotion || !("IntersectionObserver" in window)) return;
@@ -93,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  }, { threshold: 0.12, rootMargin: "10000px 0px -40px 0px" });
 
   targets.forEach(function (el) { io.observe(el); });
 });

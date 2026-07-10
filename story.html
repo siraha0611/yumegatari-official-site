@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body>
 
@@ -48,9 +48,12 @@
   <p class="sub">物語のはじまり</p>
 </section>
 
-<section>
-  <div class="container">
-    <div class="story-lead">
+<section class="story-stage">
+  <div class="fog-layer" aria-hidden="true"></div>
+  <div class="fog-layer f2" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="container" style="position:relative;">
+    <div class="story-lead" data-fog>
 夢とは、
 将来へ自身を託す願望であり、
 脳が情報整理で立ち上がる記憶の断片でもある。
@@ -68,7 +71,7 @@
 
     <hr class="story-divider">
 
-    <div class="story-block">
+    <div class="story-block" data-fog>
 2025年10月13日。
 残暑の名残をようやく手放した街に、乾いた秋風が吹き始めた頃。
 都心から少し離れた路地裏に、ひっそりと佇む一軒の喫茶店がある。
@@ -81,7 +84,7 @@
 
     <hr class="story-divider">
 
-    <div class="story-block">
+    <div class="story-block" data-fog>
 穏やかなクラシックと紅茶の香りに包まれた、この小さな店で、
 あなたたちは店員として働いている。
 
@@ -97,7 +100,7 @@
 
     <hr class="story-divider">
 
-    <p class="story-lead" style="font-size:1.15rem;">
+    <p class="story-lead" data-fog style="font-size:1.3rem;">
 君たちは選ばなくてはならない。
 「夢」か「現実」か
     </p>
@@ -131,6 +134,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=4"></script>
 </body>
 </html>
