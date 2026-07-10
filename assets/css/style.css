@@ -3,19 +3,28 @@
    ========================================================== */
 
 :root{
-  --bg: #14131f;
-  --bg-deep: #0e0d17;
-  --card: #22213a;
-  --card-soft: #1b1a2c;
-  --border: rgba(201,162,77,0.28);
-  --gold: #c9a24d;
-  --gold-soft: #e0c27a;
-  --cream: #f2ead8;
-  --cream-dim: #cfc6b0;
-  --shadow: 0 18px 40px rgba(0,0,0,0.45);
+  /* 喫茶店らしい明るいクリーム基調(2026-07-10リニューアル)
+     var名は旧テーマ由来のまま値だけ差し替えている:
+     --cream=本文色(濃茶) / --gold-soft=見出し色(深金茶) */
+  --bg: #f7f2e8;
+  --bg-deep: #efe7d6;
+  --card: #fffdf8;
+  --card-soft: #f3ecdc;
+  --border: rgba(139,105,52,0.28);
+  --gold: #a8802f;
+  --gold-soft: #8a6a28;
+  --cream: #3d3226;
+  --cream-dim: #6f5f4b;
+  --shadow: 0 12px 30px rgba(90,70,40,0.14);
   --radius: 14px;
   --serif: "Noto Serif JP", serif;
   --sans: "Noto Sans JP", sans-serif;
+  /* ヘッダー/フッター(ダーク帯)専用 */
+  --ink-bg: #241c10;
+  --ink-bg-t: rgba(30,23,12,0.93);
+  --ink-text: #f2ead8;
+  --ink-dim: #cfc4ae;
+  --ink-gold: #e0c27a;
 }
 
 *{ box-sizing: border-box; }
@@ -54,9 +63,9 @@ h1, h2, h3{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(14,13,23,0.92);
+  background: var(--ink-bg-t);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(224,194,122,0.3);
 }
 .header-inner{
   max-width: 980px;
@@ -71,17 +80,18 @@ h1, h2, h3{
   align-items: center;
   gap: 10px;
   font-family: var(--serif);
-  color: var(--cream);
+  color: var(--ink-text);
   font-size: 1rem;
 }
+.brand:hover{ color: var(--ink-gold); }
 .brand img{ height: 34px; width: auto; }
 .brand-name{ font-size: 0.95rem; letter-spacing: 0.04em; }
 
 .nav-toggle{
   display: none;
   background: none;
-  border: 1px solid var(--border);
-  color: var(--gold-soft);
+  border: 1px solid rgba(224,194,122,0.4);
+  color: var(--ink-gold);
   border-radius: 8px;
   font-size: 1.3rem;
   padding: 4px 10px;
@@ -97,18 +107,18 @@ h1, h2, h3{
 }
 .main-nav a{
   font-size: 0.88rem;
-  color: var(--cream-dim);
+  color: var(--ink-dim);
   white-space: nowrap;
 }
-.main-nav a:hover, .main-nav a.active{ color: var(--gold-soft); }
+.main-nav a:hover, .main-nav a.active{ color: var(--ink-gold); }
 .main-nav a.cta{
-  color: var(--bg-deep);
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  color: #241c10;
+  background: linear-gradient(180deg, #e0c27a, #c9a24d);
   padding: 7px 16px;
   border-radius: 999px;
   font-weight: 700;
 }
-.main-nav a.cta:hover{ filter: brightness(1.08); color: var(--bg-deep); }
+.main-nav a.cta:hover{ filter: brightness(1.08); color: #241c10; }
 
 @media (max-width: 720px){
   .nav-toggle{ display: inline-block; }
@@ -117,8 +127,8 @@ h1, h2, h3{
     position: absolute;
     top: 100%;
     left: 0; right: 0;
-    background: var(--bg-deep);
-    border-bottom: 1px solid var(--border);
+    background: var(--ink-bg);
+    border-bottom: 1px solid rgba(224,194,122,0.3);
   }
   .main-nav.open{ display: block; }
   .main-nav ul{
@@ -137,7 +147,7 @@ h1, h2, h3{
   padding: 100px 20px 80px;
   text-align: center;
   overflow: hidden;
-  background: #000;
+  background: #2a2214;
 }
 .hero-bg{
   position: absolute;
@@ -149,26 +159,29 @@ h1, h2, h3{
 .hero-overlay{
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(14,13,23,0.55) 0%, rgba(14,13,23,0.88) 65%, var(--bg) 100%);
+  background: linear-gradient(180deg, rgba(28,21,11,0.5) 0%, rgba(28,21,11,0.62) 55%, var(--bg) 100%);
 }
 .hero-inner{ position: relative; max-width: 760px; margin: 0 auto; }
-.hero-mark{ font-size: 1.1rem; color: var(--gold-soft); letter-spacing: 0.08em; }
+.hero-mark{ font-size: 1.1rem; color: var(--ink-gold); letter-spacing: 0.08em; }
 .hero-title{
   font-size: clamp(1.6rem, 4.4vw, 2.4rem);
   white-space: pre-line;
   margin: 10px 0 18px;
-  color: var(--cream);
+  color: #f6efe0;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.45);
 }
 .hero-sub{
   font-family: var(--serif);
   font-size: 1.15rem;
-  color: var(--gold-soft);
+  color: var(--ink-gold);
   margin-bottom: 30px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.4);
 }
 .hero-tagline{
   font-size: 0.95rem;
-  color: var(--cream-dim);
+  color: var(--ink-dim);
   margin-bottom: 10px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.4);
 }
 
 /* page (non-index) hero, smaller */
@@ -177,10 +190,25 @@ h1, h2, h3{
   padding: 70px 20px 50px;
   text-align: center;
   overflow: hidden;
+  background: #2a2214;
 }
-.page-hero .hero-bg{ opacity: 0.35; }
-.page-hero h1{ font-size: clamp(1.5rem, 3.6vw, 2.1rem); position: relative; }
-.page-hero .sub{ position: relative; color: var(--cream-dim); font-family: var(--serif); font-size: 1.05rem; }
+.page-hero .hero-bg{ opacity: 0.5; }
+.page-hero .hero-overlay{
+  background: linear-gradient(180deg, rgba(28,21,11,0.35) 0%, rgba(28,21,11,0.55) 100%);
+}
+.page-hero h1{
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  position: relative;
+  color: #ecd9a8;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+}
+.page-hero .sub{
+  position: relative;
+  color: var(--ink-dim);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.45);
+}
 
 /* ---------- buttons ---------- */
 .btn{
@@ -194,16 +222,17 @@ h1, h2, h3{
   margin: 6px 8px;
 }
 .btn-primary{
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
-  color: var(--bg-deep);
-  box-shadow: 0 10px 24px rgba(201,162,77,0.25);
+  background: linear-gradient(180deg, #d9b463, #b98f34);
+  color: #241c10;
+  box-shadow: 0 10px 24px rgba(168,128,47,0.3);
 }
-.btn-primary:hover{ filter: brightness(1.06); color: var(--bg-deep); }
+.btn-primary:hover{ filter: brightness(1.06); color: #241c10; transform: translateY(-2px); }
 .btn-outline{
   background: transparent;
   color: var(--gold-soft);
 }
-.btn-outline:hover{ background: rgba(201,162,77,0.1); color: var(--gold-soft); }
+.btn-outline:hover{ background: rgba(168,128,47,0.1); color: var(--gold-soft); transform: translateY(-2px); }
+.btn{ transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease; }
 .btn-large{ font-size: 1.1rem; padding: 18px 40px; }
 
 .cta-row{ margin-top: 10px; }
@@ -448,15 +477,16 @@ section.alt{ background: var(--bg-deep); }
 
 /* ---------- footer ---------- */
 .site-footer{
-  border-top: 1px solid var(--border);
-  background: var(--bg-deep);
+  border-top: 1px solid rgba(224,194,122,0.3);
+  background: var(--ink-bg);
   padding: 40px 0 30px;
   text-align: center;
-  color: var(--cream-dim);
+  color: var(--ink-dim);
   font-size: 0.82rem;
 }
 .site-footer .foot-links{ margin-bottom: 14px; }
-.site-footer .foot-links a{ margin: 0 10px; }
+.site-footer .foot-links a{ margin: 0 10px; color: var(--ink-gold); }
+.site-footer .foot-links a:hover{ color: #f0d89a; }
 .site-footer p{ margin: 4px 0; white-space: pre-line; }
 
 /* ---------- story page ---------- */
@@ -623,12 +653,77 @@ section.alt{ background: var(--bg-deep); }
   max-width: 760px;
   margin: 0 auto 30px;
   padding: 14px 20px;
-  background: rgba(192,70,31,0.12);
-  border: 1px solid rgba(192,70,31,0.5);
+  background: rgba(192,70,31,0.08);
+  border: 1px solid rgba(192,70,31,0.4);
   border-radius: var(--radius);
-  color: #e8a794;
+  color: #a03c1c;
   font-size: 0.85rem;
   text-align: center;
+}
+
+/* ==========================================================
+   アニメーション(2026-07-10)
+   ========================================================== */
+
+/* スクロール連動フェードイン(JSが.revealを付与、可視で.in) */
+.reveal{
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s cubic-bezier(0.22,0.61,0.36,1), transform 0.9s cubic-bezier(0.22,0.61,0.36,1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.in{ opacity: 1; transform: none; }
+
+/* ヒーロータイトルの一字ずつ浮かび上がり(JSがspan.chに分割) */
+.hero-title .ch{
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(0.35em);
+  animation: chIn 0.9s cubic-bezier(0.22,0.61,0.36,1) forwards;
+}
+@keyframes chIn{
+  to{ opacity: 1; filter: blur(0); transform: none; }
+}
+.hero-sub.fade-late, .hero-tagline.fade-late, .hero .cta-row.fade-late{
+  opacity: 0;
+  animation: fadeUp 1.1s ease forwards;
+}
+@keyframes fadeUp{
+  from{ opacity: 0; transform: translateY(14px); }
+  to{ opacity: 1; transform: none; }
+}
+
+/* ヒーローの湯気(ティーカップ絵文字の上に3本) */
+.hero-mark{ position: relative; display: inline-block; font-size: 1.6rem; }
+.hero-mark .steam{
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 3px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(246,239,224,0), rgba(246,239,224,0.75));
+  opacity: 0;
+  animation: steamRise 2.8s ease-in-out infinite;
+}
+.hero-mark .steam:nth-child(1){ margin-left: -7px; animation-delay: 0s; }
+.hero-mark .steam:nth-child(2){ margin-left: -1px; animation-delay: 0.9s; height: 20px; }
+.hero-mark .steam:nth-child(3){ margin-left: 5px; animation-delay: 1.7s; }
+@keyframes steamRise{
+  0%{ opacity: 0; transform: translateY(6px) scaleY(0.6); }
+  35%{ opacity: 0.9; }
+  100%{ opacity: 0; transform: translateY(-14px) scaleY(1.15) translateX(2px); }
+}
+
+/* 動きを減らす設定の尊重 */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .reveal{ opacity: 1; transform: none; transition: none; }
+  .hero-title .ch{ opacity: 1; filter: none; transform: none; animation: none; }
+  .fade-late{ opacity: 1 !important; animation: none !important; }
+  .hero-mark .steam{ animation: none; opacity: 0; }
+  .btn, .link-card{ transition: none; }
 }
 
 /* ---------- misc ---------- */
