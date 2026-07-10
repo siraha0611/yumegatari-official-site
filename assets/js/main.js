@@ -68,6 +68,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (fogEls.length && !reduceMotion && "IntersectionObserver" in window) {
     var fogLines = [];
     fogEls.forEach(function (el) {
+      /* 手書きの.fog-ln子要素(強弱クラス付き)があればそのまま使う */
+      var pre = el.querySelectorAll(".fog-ln");
+      if (pre.length) {
+        var pidx = 0;
+        pre.forEach(function (ln) {
+          ln.style.setProperty("--fog-delay", ((pidx % 5) * 0.22).toFixed(2) + "s");
+          pidx++;
+          fogLines.push(ln);
+        });
+        return;
+      }
       var lines = el.textContent.split("\n");
       el.textContent = "";
       var idx = 0;

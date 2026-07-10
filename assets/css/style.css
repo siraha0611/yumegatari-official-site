@@ -811,13 +811,16 @@ section.alt{ background: var(--bg-deep); }
   from{ transform: translate3d(-3%, -2%, 0) scale(1); }
   to{ transform: translate3d(3%, 2%, 0) scale(1.08); }
 }
-/* 行ごとの「煙から凝縮」リビール(JSが[data-fog]を行分割) */
+/* 行ごとの「煙から凝縮」リビール(JSが[data-fog]を行分割。
+   手書きの.fog-ln子要素があればそれを使う=強弱の指定用) */
 .fog-ln{
   display: block;
   opacity: 0;
   filter: blur(13px);
   transform: translateY(28px);
   letter-spacing: 0.13em;
+  text-wrap: balance;        /* 折返し行の長さを揃える */
+  word-break: auto-phrase;   /* 日本語の文節で折り返す(対応ブラウザ) */
   transition:
     opacity 1.9s var(--ease-out),
     filter 1.9s var(--ease-out),
@@ -831,6 +834,39 @@ section.alt{ background: var(--bg-deep); }
   filter: blur(0);
   transform: none;
   letter-spacing: 0.05em;
+}
+/* 行間の呼吸 */
+.fog-gap{ display: block; height: 2.4em; }
+/* ジャンプ率(文字の強弱) */
+.fog-ln.lg{
+  font-size: clamp(1.2rem, 3.4vw, 1.45rem);
+  color: #f3e7c9;
+}
+.fog-ln.xl{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4.6vw, 1.9rem);
+  line-height: 2.1;
+  color: #f0dfae;
+}
+.fog-ln.xxl{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  line-height: 1.9;
+  letter-spacing: 0.1em;
+  color: #f0dfae;
+}
+.fog-ln.in.xxl{ letter-spacing: 0.08em; }
+.fog-ln.sm{
+  font-size: 0.88rem;
+  letter-spacing: 0.3em;
+  color: rgba(239,230,210,0.65);
+}
+@media (max-width: 520px){
+  .story-stage .story-lead{ font-size: 0.98rem; line-height: 2.4; }
+  .story-stage .story-block{ font-size: 0.95rem; line-height: 2.4; }
+  .fog-gap{ height: 1.8em; }
 }
 @media (prefers-reduced-motion: reduce){
   .fog-layer{ animation: none; }
