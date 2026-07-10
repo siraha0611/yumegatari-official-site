@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siraha0611.github.io/yumegatari-official-site/sitemap.xml
