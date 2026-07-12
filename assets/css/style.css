@@ -334,7 +334,10 @@ h1, h2, h3{
 
 /* ---------- buttons ---------- */
 .btn{
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   padding: 14px 30px;
   border-radius: 999px;
   font-weight: 700;
