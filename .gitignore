@@ -6,3 +6,6 @@ _ho_src/
 _build/
 _passwords*
 node_modules/
+
+# ローカル開発用プレビュー設定
+.claude/

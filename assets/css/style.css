@@ -1294,3 +1294,109 @@ section.alt{ background: var(--bg-deep); }
 /* ---------- misc ---------- */
 .center{ text-align: center; }
 .mt-lg{ margin-top: 40px; }
+
+/* ==========================================================
+   アクセシビリティ強化(2026-07-28)
+   ========================================================== */
+
+/* スキップリンク: キーボード操作でヘッダーナビを飛ばして本文へ */
+.skip-link{
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  padding: 10px 18px;
+  border-radius: 0 0 10px 10px;
+  background: var(--ink-bg);
+  color: var(--ink-gold);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top 0.2s var(--ease-out);
+}
+.skip-link:focus{ top: 0; }
+
+/* キーボードフォーカスの可視化(マウス操作時は出さない) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible{
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.site-header a:focus-visible,
+.site-header button:focus-visible,
+.site-footer a:focus-visible{ outline-color: var(--ink-gold); }
+
+/* 固定ヘッダーにアンカー先が潜り込まないように */
+html{ scroll-padding-top: 92px; }
+
+@media (prefers-reduced-motion: reduce){
+  .skip-link{ transition: none; }
+}
+
+/* ==========================================================
+   FAQ アコーディオン(購入ページ)
+   ========================================================== */
+.faq-list{
+  max-width: 820px;
+  margin: 0 auto;
+}
+.faq-item{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+.faq-item[open]{
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+.faq-item > summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 52px 20px 22px;
+  position: relative;
+  font-family: var(--display);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--cream);
+}
+.faq-item > summary::-webkit-details-marker{ display: none; }
+.faq-item > summary::after{
+  content: "＋";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  transition: transform 0.25s var(--ease-out);
+}
+.faq-item[open] > summary::after{
+  content: "－";
+  transform: translateY(-50%);
+}
+.faq-item > summary:hover{ color: var(--gold-soft); }
+.faq-body{
+  padding: 0 22px 22px;
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+  line-height: 1.95;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: -1px;
+}
+.faq-body a{ color: var(--gold); }
+
+@media (max-width: 640px){
+  .faq-item > summary{ padding: 16px 44px 16px 16px; font-size: 0.97rem; }
+  .faq-body{ padding: 16px 16px 18px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .faq-item, .faq-item > summary::after{ transition: none; }
+}

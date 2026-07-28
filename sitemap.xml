@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ドメインは仮でGitHub Pages既定URL(https://siraha0611.github.io/yumegatari-official-site/)を使用。
      独自ドメインを取得した場合は、以下のURLとrobots.txtのSitemap行を差し替えること。
-     ho1〜ho4(秘匿ページ)は意図的に含めていない。 -->
+     ho1〜ho4・truth・book(秘匿/購入者専用ページ)は意図的に含めていない。
+     lastmod はサイト更新時に手で更新する。 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/story.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/overview.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/characters.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/keyword.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/handout.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/shindan.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/before-session.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/kp-guide.html</loc></url>
-  <url><loc>https://siraha0611.github.io/yumegatari-official-site/scenario.html</loc></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/</loc><lastmod>2026-07-28</lastmod><priority>1.0</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/scenario.html</loc><lastmod>2026-07-28</lastmod><priority>0.9</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/story.html</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/overview.html</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/characters.html</loc><lastmod>2026-07-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/keyword.html</loc><lastmod>2026-07-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/handout.html</loc><lastmod>2026-07-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/shindan.html</loc><lastmod>2026-07-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/before-session.html</loc><lastmod>2026-07-28</lastmod><priority>0.6</priority></url>
+  <url><loc>https://siraha0611.github.io/yumegatari-official-site/kp-guide.html</loc><lastmod>2026-07-28</lastmod><priority>0.6</priority></url>
 </urlset>

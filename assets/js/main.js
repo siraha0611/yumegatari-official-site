@@ -3,9 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".main-nav");
   if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
+    function setNav(open) {
+      nav.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+    }
+    toggle.addEventListener("click", function () {
+      setNav(!nav.classList.contains("open"));
+    });
+    /* メニュー内のリンクを押したら閉じる(同一ページ内アンカー対策) */
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setNav(false);
+    });
+    /* Escapeで閉じてトグルにフォーカスを戻す */
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+        setNav(false);
+        toggle.focus();
+      }
     });
   }
 
