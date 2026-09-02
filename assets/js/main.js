@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   var heroEnd = splitLines(document.querySelector(".hero-title"), 0.25, 0.16);
+  // ヒーローがロゴ画像(.hero-logo)のときは、ロゴのフェード(1.5s+0.15s)の途中から後続を出す
+  if (!heroEnd && !reduceMotion && document.querySelector(".hero-logo")) heroEnd = 0.9;
   splitLines(document.querySelector(".page-hero h1"), 0.1, 0.14);
 
   // ヒーロータイトル後続要素は遅れてふわっと

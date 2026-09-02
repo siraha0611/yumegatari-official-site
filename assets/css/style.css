@@ -262,6 +262,23 @@ h1, h2, h3{
   background: linear-gradient(180deg, rgba(28,21,11,0.5) 0%, rgba(28,21,11,0.62) 55%, var(--bg) 100%);
 }
 .hero-inner{ position: relative; max-width: 760px; margin: 0 auto; }
+/* ファーストビュー=ロゴ(2026-09-02 KASO指定。文字見出しの代わりにロゴ画像を最初に出す) */
+.hero-logo{
+  margin: 0 auto 6px;
+  max-width: min(720px, 90vw);
+  opacity: 0;
+  animation: logoIn 1.5s var(--ease-out) 0.15s forwards;
+}
+.hero-logo img{
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 6px 30px rgba(0,0,0,0.6));
+}
+@keyframes logoIn{
+  from{ opacity: 0; transform: translateY(16px) scale(0.985); }
+  to{ opacity: 1; transform: none; }
+}
 .hero-mark{ font-size: 1.1rem; color: var(--ink-gold); letter-spacing: 0.08em; }
 .hero-title{
   font-family: var(--display);
@@ -1089,6 +1106,7 @@ section.alt{ background: var(--bg-deep); }
   html{ scroll-behavior: auto; }
   .reveal{ opacity: 1; transform: none; transition: none; }
   .hero-title .ch{ opacity: 1; filter: none; transform: none; animation: none; }
+  .hero-logo{ opacity: 1; animation: none; }
   .hero-title .ln-i, .page-hero h1 .ln-i{ transform: none; animation: none; }
   .page-hero .sub{ opacity: 1; animation: none; }
   .hero .hero-bg, .page-hero .hero-bg{ animation: none; }
