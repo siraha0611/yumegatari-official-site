@@ -12,3 +12,8 @@ node_modules/
 
 # 再ビルド時のローカルバックアップ
 _backup_*
+
+# Worker(感想掲示板)のローカルキャッシュ
+_worker/.wrangler/
+_worker/.dev.vars*
+_worker/.env*

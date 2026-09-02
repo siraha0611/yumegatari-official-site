@@ -1418,3 +1418,131 @@ html{ scroll-padding-top: 92px; }
 @media (prefers-reduced-motion: reduce){
   .faq-item, .faq-item > summary::after{ transition: none; }
 }
+
+/* ==========================================================
+   reviews.html — 通過者の感想(ネタバレ掲示板) 2026-09-03
+   ========================================================== */
+.rv-gate{
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.rv-gate .rv-q{
+  font-family: var(--display);
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin: 6px 0 14px;
+  line-height: 1.7;
+}
+.rv-gate .rv-hint{ font-size: 0.8rem; color: var(--cream-dim); margin: 0 0 14px; }
+.rv-gate form{ display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.rv-input, .rv-textarea, .rv-select{
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--cream);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  width: 100%;
+  max-width: 100%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.rv-gate .rv-input{ flex: 1 1 240px; }
+.rv-gate .btn{ margin: 0; }
+.rv-input:focus, .rv-textarea:focus, .rv-select:focus{
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(168,128,47,0.18);
+}
+.rv-textarea{ min-height: 180px; resize: vertical; line-height: 1.8; }
+.rv-msg{ margin: 12px auto 0; font-size: 0.88rem; min-height: 1.4em; }
+.rv-msg.err{ color: #a03c1c; }
+.rv-msg.ok{ color: #3d6b3a; }
+
+.rv-form{
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+}
+.rv-row{ display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.rv-field{ display: block; margin-bottom: 16px; }
+.rv-field > span{
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold-soft);
+  margin-bottom: 6px;
+}
+.rv-field .opt{ font-weight: 400; color: var(--cream-dim); margin-left: 6px; }
+.rv-count{ text-align: right; font-size: 0.78rem; color: var(--cream-dim); margin-top: 4px; }
+.rv-count.over{ color: #a03c1c; font-weight: 700; }
+.rv-form .btn{ margin: 8px 0 0; }
+.rv-form .btn[disabled]{ opacity: 0.55; cursor: not-allowed; transform: none; }
+.rv-rules{
+  max-width: 760px;
+  margin: 0 auto 22px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--cream-dim);
+}
+.rv-rules li{ padding: 6px 0 6px 1.4em; position: relative; }
+.rv-rules li::before{ content: "◆"; position: absolute; left: 0; color: var(--gold); font-size: 0.7em; top: 10px; }
+.hp{ position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+.rv-check{ display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; color: var(--cream-dim); margin-bottom: 10px; cursor: pointer; }
+.rv-check input{ margin-top: 4px; accent-color: var(--gold); flex: none; }
+.rv-badge.quote{ border-color: #3d6b3a; color: #3d6b3a; background: rgba(61,107,58,0.08); }
+
+.rv-list{ max-width: 760px; margin: 0 auto; display: grid; gap: 18px; }
+.rv-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  position: relative;
+}
+.rv-card.is-hidden{ opacity: 0.55; border-style: dashed; }
+.rv-meta{ display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 10px; }
+.rv-name{ font-family: var(--display); font-weight: 700; color: var(--cream); font-size: 1.02rem; }
+.rv-badge{
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  color: var(--gold-soft);
+  background: var(--card-soft);
+}
+.rv-badge.ho{ border-color: var(--border); color: var(--cream-dim); }
+.rv-date{ margin-left: auto; font-family: var(--en); font-size: 0.85rem; color: var(--cream-dim); }
+.rv-body{ white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.9; color: var(--cream); font-size: 0.95rem; }
+.rv-empty{ text-align: center; color: var(--cream-dim); padding: 30px 0; }
+.rv-admin-bar{ display: flex; gap: 8px; margin-top: 12px; }
+.rv-admin-bar button{
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-soft);
+  color: var(--cream-dim);
+  cursor: pointer;
+}
+.rv-admin-bar button:hover{ border-color: var(--gold); color: var(--gold-soft); }
+.rv-toolbar{ max-width: 760px; margin: 0 auto 16px; display: flex; justify-content: flex-end; gap: 10px; font-size: 0.82rem; color: var(--cream-dim); }
+.rv-toolbar button{ background: none; border: none; color: var(--gold-soft); cursor: pointer; text-decoration: underline; font-size: 0.82rem; }
+@media (max-width: 640px){
+  .rv-row{ grid-template-columns: 1fr; }
+  .rv-gate, .rv-form{ padding: 22px 18px; }
+  .rv-date{ margin-left: 0; width: 100%; }
+}

@@ -1,0 +1,27 @@
+# 夢ティ公式サイト「通過者の感想」掲示板のバックエンド(Cloudflare Workers + D1)
+# 公式サイト本体はGitHub Pages(静的)なので、投稿の保存だけをこのWorkerが受け持つ。
+# デプロイ: cd _worker && npx wrangler deploy
+name = "yumegatari-reviews"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "yumegatari-reviews"
+# `npx wrangler d1 create yumegatari-reviews` の出力で埋める
+database_id = "ccb67d04-9a09-49a7-839e-f6cac10e0880"
+
+[vars]
+# 投稿・閲覧を許可するページのオリジン(カンマ区切り)。localhost/127.0.0.1 はコード側で常に許可
+ALLOWED_ORIGINS = "https://siraha0611.github.io"
+# 本文の最大文字数 / 名前の最大文字数
+BODY_MAX = "1500"
+NAME_MAX = "24"
+
+# secrets(リポに入れない。`npx wrangler secret put <NAME>` で登録):
+#   GATE_ANSWERS … 通過者ゲートの正解(カンマ区切りで複数可。控えは _passwords.md)。
+#                  比較前に NFKC→ひらがな→カタカナ→記号/空白除去→小文字 に正規化するので表記ゆれは吸収される
+#                  ページ側(reviews.html)の設問文と対応させること
+#   TOKEN_SECRET … 通過トークン署名用のランダム文字列
+#   ADMIN_TOKEN  … 投稿の非表示/再表示に使う管理用トークン(控えは _passwords.md)

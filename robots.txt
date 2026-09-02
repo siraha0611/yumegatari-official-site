@@ -6,5 +6,6 @@ Disallow: /ho3.html
 Disallow: /ho4.html
 Disallow: /truth.html
 Disallow: /book.html
+Disallow: /reviews.html
 
 Sitemap: https://siraha0611.github.io/yumegatari-official-site/sitemap.xml
