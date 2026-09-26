@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OVERVIEW | 夢語りはティータイムのあとで(夢ティ)</title>
-<meta name="description" content="『夢語りはティータイムのあとで』の概要。スペック・公開ハンドアウト・推奨技能・注意事項を掲載。">
+<meta name="description" content="『夢語りはティータイムのあとで』の概要。告知映像・スペック・公開ハンドアウト・推奨技能・注意事項を掲載。">
 <link rel="canonical" href="https://siraha0611.github.io/yumegatari-official-site/overview.html">
 <link rel="icon" href="assets/img/logo/logo-black.webp">
 <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
 <meta name="theme-color" content="#241c10">
 <meta property="og:title" content="OVERVIEW | 夢語りはティータイムのあとで">
-<meta property="og:description" content="CoC6版・4PL秘匿・約30時間。スペックと公開ハンドアウト。">
+<meta property="og:description" content="CoC6版・4PL秘匿・約30時間。告知映像、スペックと公開ハンドアウト。">
 <meta property="og:image" content="https://siraha0611.github.io/yumegatari-official-site/assets/img/hero/npc-group.webp">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
@@ -25,10 +25,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/bg/04-tea.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/overview/tea-milk.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/style.css?v=7">
+<link rel="stylesheet" href="assets/css/overview-mg.css?v=3">
 </head>
-<body>
+<body class="mg-overview-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
 
 <header class="site-header">
@@ -55,124 +56,97 @@
   </div>
 </header>
 
-<main id="main">
-
-<section class="page-hero">
-  <div class="hero-bg" style="background-image:url('assets/img/bg/04-tea.webp')"></div>
-  <div class="hero-overlay"></div>
-  <h1>OVERVIEW</h1>
-  <p class="sub">シナリオ概要</p>
+<main id="main" class="mg-overview">
+<section class="mg-hero" aria-labelledby="mg-hero-title">
+  <div class="mg-hero-bg" aria-hidden="true"></div>
+  <canvas class="mg-particles" aria-hidden="true"></canvas>
+  <div class="mg-hud-corner mg-hud-tl" aria-hidden="true">DREAMTALK AFTER TEA TIME</div>
+  <div class="mg-hud-corner mg-hud-tr" aria-hidden="true">CoC 6th — SECRET 4PL</div>
+  <div class="mg-hero-center">
+    <div class="mg-hero-ring" aria-hidden="true">
+      <svg viewBox="0 0 400 400" focusable="false">
+        <defs><circle id="mg-tick" cx="200" cy="18" r="1.7"></circle></defs>
+        <g class="mg-ring-ticks"><use href="#mg-tick"/><use href="#mg-tick" transform="rotate(15 200 200)"/><use href="#mg-tick" transform="rotate(30 200 200)"/><use href="#mg-tick" transform="rotate(45 200 200)"/><use href="#mg-tick" transform="rotate(60 200 200)"/><use href="#mg-tick" transform="rotate(75 200 200)"/><use href="#mg-tick" transform="rotate(90 200 200)"/><use href="#mg-tick" transform="rotate(105 200 200)"/><use href="#mg-tick" transform="rotate(120 200 200)"/><use href="#mg-tick" transform="rotate(135 200 200)"/><use href="#mg-tick" transform="rotate(150 200 200)"/><use href="#mg-tick" transform="rotate(165 200 200)"/><use href="#mg-tick" transform="rotate(180 200 200)"/><use href="#mg-tick" transform="rotate(195 200 200)"/><use href="#mg-tick" transform="rotate(210 200 200)"/><use href="#mg-tick" transform="rotate(225 200 200)"/><use href="#mg-tick" transform="rotate(240 200 200)"/><use href="#mg-tick" transform="rotate(255 200 200)"/><use href="#mg-tick" transform="rotate(270 200 200)"/><use href="#mg-tick" transform="rotate(285 200 200)"/><use href="#mg-tick" transform="rotate(300 200 200)"/><use href="#mg-tick" transform="rotate(315 200 200)"/><use href="#mg-tick" transform="rotate(330 200 200)"/><use href="#mg-tick" transform="rotate(345 200 200)"/></g>
+        <circle class="mg-ring-line mg-ring-line-outer" cx="200" cy="200" r="164"></circle><circle class="mg-ring-line mg-ring-line-mid" cx="200" cy="200" r="146"></circle><circle class="mg-ring-line mg-ring-line-inner" cx="200" cy="200" r="132"></circle><path class="mg-ring-arc" d="M71 151 A138 138 0 0 1 329 151"></path><path class="mg-ring-arc mg-ring-arc-reverse" d="M329 249 A138 138 0 0 1 71 249"></path>
+      </svg>
+    </div>
+    <div class="mg-hero-copy"><h1 id="mg-hero-title">OVERVIEW</h1><p class="mg-hero-jp">シナリオ概要</p><p class="mg-tagline">◐秘匿4PL×紅茶喫茶×夢見る人×特殊戦闘</p><a class="mg-watch-link" href="#trailer"><span aria-hidden="true">▶</span> 告知映像を見る</a></div>
+  </div>
+  <div class="mg-hud-corner mg-hud-bl" aria-hidden="true"><span>SCROLL</span><i></i></div>
+  <div class="mg-hud-corner mg-hud-br" aria-hidden="true">REC <b>●</b> <span data-mg-clock>00:00</span></div>
 </section>
 
-<section>
+<div class="mg-tea-ticker" aria-hidden="true"><div class="mg-tea-track"><span>EARL GREY</span><i>◦</i><span>DARJEELING</span><i>◦</i><span>UVA</span><i>◦</i><span>KEEMUN</span><i>◦</i><span>NILGIRI</span><i>◦</i><span>KANDY</span><i>◦</i><span>NUWARA ELIYA</span><i>◦</i><span>ASSAM</span><i>◦</i><span>EARL GREY</span><i>◦</i><span>DARJEELING</span><i>◦</i><span>UVA</span><i>◦</i><span>KEEMUN</span><i>◦</i><span>NILGIRI</span><i>◦</i><span>KANDY</span><i>◦</i><span>NUWARA ELIYA</span><i>◦</i><span>ASSAM</span><i>◦</i></div></div>
+
+<section class="mg-trailer-section mg-dark" id="trailer" aria-labelledby="trailer-title">
+  <div class="mg-wide-container">
+    <div class="mg-section-head mg-section-reveal"><p class="mg-kicker">Trailer</p><h2 id="trailer-title">告知映像</h2></div>
+    <div class="mg-player-shell mg-sequence" data-mg-player>
+      <span class="mg-bracket mg-bracket-tl" aria-hidden="true"></span><span class="mg-bracket mg-bracket-tr" aria-hidden="true"></span><span class="mg-bracket mg-bracket-bl" aria-hidden="true"></span><span class="mg-bracket mg-bracket-br" aria-hidden="true"></span>
+      <span class="mg-player-meta mg-player-rec" aria-hidden="true">REC <b>●</b></span><span class="mg-player-meta mg-player-time" aria-hidden="true">81s</span><span class="mg-player-meta mg-player-size" aria-hidden="true">1920×1080</span>
+      <div class="mg-video-frame"><video controls playsinline preload="none" poster="assets/img/overview/trailer-poster.webp"><source src="assets/video/yumeti-trailer-1080.mp4" type="video/mp4">お使いのブラウザは動画再生に対応していません。</video><button class="mg-play-button" type="button" aria-label="告知映像を再生（音が出ます）"><span class="mg-play-ring" aria-hidden="true"><i>▶</i></span><span class="mg-play-label">PLAY WITH SOUND</span></button></div>
+    </div>
+    <p class="mg-music-credit">Music: "Rêverie" (C. Debussy) performed by Felted Classics — <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> / <a href="https://www.jamendo.com/album/638850">Jamendo</a>（曲の一部を使用・フェード編集）</p>
+    <div class="mg-trailer-actions"><a class="mg-gold-button" href="https://booth.pm/ja/items/8045336" target="_blank" rel="noopener">BOOTHで購入する <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="mg-spec-section mg-cream" aria-labelledby="spec-title">
   <div class="container">
-    <div class="center" style="margin-bottom:30px;">
-      <span class="tagline-badge">◐秘匿4PL×紅茶喫茶×夢見る人×特殊戦闘</span>
-    </div>
-    <div class="section-head" data-no="01">
-      <p class="kicker">Specifications</p>
-      <h2>スペック</h2>
-    </div>
-    <ul class="spec-list">
-      <li><strong>システム</strong>：クトゥルフ神話TRPG6版</li>
-      <li><strong>舞台</strong>：現代(2025年)＆ドリームランド</li>
-      <li><strong>プレイ時間</strong>：約30時間(長編・分割可)</li>
-      <li><strong>人数と形式</strong>：4PL秘匿シナリオ(探索者は新規作成限定)</li>
-      <li><strong>推奨能力値</strong>：POW</li>
-      <li><strong>推奨技能</strong>：三大探索技能・銃火器以外の戦闘系技能</li>
-      <li><strong>準推奨技能</strong>：交渉系技能、精神分析、応急手当</li>
-      <li><strong>ロスト率</strong>：中(戦闘難易度高め)</li>
-      <li><strong>難度</strong>：KP★★★★☆ / PL★★★☆☆</li>
-      <li><strong>価格</strong>：¥1,800(サンプル無料)</li>
+    <div class="mg-section-head mg-section-reveal"><p class="mg-kicker">Specifications</p><h2 id="spec-title">スペック</h2></div>
+    <ul class="mg-spec-list">
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">System</span><strong>システム</strong><span class="mg-spec-sep">：</span><span>クトゥルフ神話TRPG6版</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Setting</span><strong>舞台</strong><span class="mg-spec-sep">：</span><span>現代(2025年)＆ドリームランド</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Play Time</span><strong>プレイ時間</strong><span class="mg-spec-sep">：</span><span data-mg-count="30" data-mg-template="約{n}時間(長編・分割可)">約30時間(長編・分割可)</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Players</span><strong>人数と形式</strong><span class="mg-spec-sep">：</span><span data-mg-count="4" data-mg-template="{n}PL秘匿シナリオ(探索者は新規作成限定)">4PL秘匿シナリオ(探索者は新規作成限定)</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Stat</span><strong>推奨能力値</strong><span class="mg-spec-sep">：</span><span>POW</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Skills</span><strong>推奨技能</strong><span class="mg-spec-sep">：</span><span>三大探索技能・銃火器以外の戦闘系技能</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Sub Skills</span><strong>準推奨技能</strong><span class="mg-spec-sep">：</span><span>交渉系技能、精神分析、応急手当</span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Lost Rate</span><strong>ロスト率</strong><span class="mg-spec-sep">：</span><span>中(戦闘難易度高め)</span></li>
+      <li class="mg-reveal mg-difficulty"><span class="mg-spec-en" aria-hidden="true">Difficulty</span><strong>難度</strong><span class="mg-spec-sep">：</span><span>KP<span class="mg-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>☆</i></span> / PL<span class="mg-stars"><i>★</i><i>★</i><i>★</i><i>☆</i><i>☆</i></span></span></li>
+      <li class="mg-reveal"><span class="mg-spec-en" aria-hidden="true">Price</span><strong>価格</strong><span class="mg-spec-sep">：</span><span data-mg-count="1800" data-mg-template="¥{n}(サンプル無料)" data-mg-format="comma">¥1,800(サンプル無料)</span></li>
     </ul>
-    <div class="badge-row mt-lg">
-      <span class="badge">PvP</span>
-      <span class="badge">PL判断で分岐</span>
-      <span class="badge">ファンタジー要素</span>
-      <span class="badge">残酷描写</span>
-      <span class="badge">エモーショナル</span>
-      <span class="badge">特殊戦闘</span>
-      <span class="badge">高難易度戦闘</span>
-    </div>
+    <div class="mg-badges" aria-label="シナリオの特徴"><span class="mg-badge mg-reveal">PvP</span><span class="mg-badge mg-reveal">PL判断で分岐</span><span class="mg-badge mg-reveal">ファンタジー要素</span><span class="mg-badge mg-reveal">残酷描写</span><span class="mg-badge mg-reveal">エモーショナル</span><span class="mg-badge mg-reveal">特殊戦闘</span><span class="mg-badge mg-reveal">高難易度戦闘</span></div>
   </div>
 </section>
 
-<section class="alt">
-  <div class="container">
-    <div class="section-head" data-no="02">
-      <p class="kicker">Public Handouts</p>
-      <h2>公開ハンドアウト</h2>
-      <p class="lead">探索者は全員、喫茶アストレアで働く店員であり、ドリームランドに入る適性を持っている。</p>
+<section class="mg-handout-section mg-dark" aria-labelledby="handout-title">
+  <div class="mg-stairs-bg" aria-hidden="true"></div>
+  <div class="container mg-handout-content">
+    <div class="mg-section-head mg-section-reveal"><p class="mg-kicker">Public Handouts</p><h2 id="handout-title">公開ハンドアウト</h2><p class="mg-lead">探索者は全員、喫茶アストレアで働く店員であり、ドリームランドに入る適性を持っている。</p></div>
+    <div class="mg-ho-grid">
+      <article class="mg-ho-card mg-reveal"><div class="mg-ho-visual" aria-hidden="true"><span class="mg-ho-ring"></span><svg class="mg-ho-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline pathLength="1" points="78.0,62.0 76.3,65.2 71.1,68.2 62.8,70.9 51.6,73.2 38.2,75.1 23.1,76.3 6.9,76.9 -9.6,76.9 -25.7,76.2 -40.6,74.8 -53.7,72.9 -64.4,70.5 -72.2,67.7 -76.8,64.6 -78.0,61.5 -75.6,58.3 -69.9,55.4 -61.1,52.7 -49.5,50.4 -35.8,48.7 -20.4,47.5 -4.1,47.0 12.3,47.2 28.3,48.0 42.9,49.5 55.6,51.5 65.9,54.0 73.2,56.8 77.2,59.9 78.0,62.0"/><polyline pathLength="1" points="46.0,60.0 45.0,61.7 41.9,63.3 37.0,64.7 30.5,66.0 22.5,67.0 13.6,67.6 4.1,68.0 -5.7,67.9 -15.1,67.6 -23.9,66.8 -31.7,65.8 -38.0,64.5 -42.6,63.0 -45.3,61.4 -46.0,59.7 -44.6,58.0 -41.2,56.5 -36.0,55.0 -29.2,53.8 -21.1,52.9 -12.0,52.3 -2.4,52.0 7.3,52.1 16.7,52.5 25.3,53.3 32.8,54.4 38.9,55.7 43.2,57.2 45.5,58.9 46.0,60.0"/><polyline pathLength="1" points="47.0,8.0 45.9,10.3 42.8,12.5 37.8,14.5 31.1,16.2 23.0,17.6 13.9,18.5 4.1,19.0 -5.8,18.9 -15.5,18.4 -24.5,17.4 -32.3,16.0 -38.8,14.2 -43.5,12.2 -46.3,9.9 -47.0,7.6 -45.6,5.3 -42.1,3.1 -36.8,1.2 -29.9,-0.5 -21.6,-1.8 -12.3,-2.6 -2.5,-3.0 7.4,-2.9 17.0,-2.3 25.9,-1.2 33.5,0.3 39.7,2.1 44.1,4.2 46.5,6.5 47.0,8.0"/><polyline pathLength="1" points="-47.0,8.0 -46.5,15.6 -45.5,22.5 -44.1,28.6 -42.2,34.0 -39.8,38.7 -37.1,42.8 -34.1,46.3 -30.8,49.2 -27.2,51.7 -23.5,53.6 -19.5,55.2 -15.5,56.4 -11.3,57.2 -7.1,57.7 -2.8,58.0 0.0,58.0 4.2,57.9 8.5,57.6 12.7,56.9 16.8,56.0 20.9,54.7 24.8,53.0 28.5,50.9 31.9,48.3 35.2,45.2 38.1,41.5 40.6,37.2 42.8,32.2 44.6,26.6 45.9,20.3 46.7,13.2 47.0,8.0"/><polyline pathLength="1" points="44.0,16.0 49.7,15.0 54.7,14.8 58.8,15.5 62.1,16.8 64.6,18.6 66.2,20.9 67.0,23.5 66.9,26.2 66.0,29.0 64.1,31.7 61.3,34.3 57.6,36.5 53.0,38.3 47.4,39.5 40.9,40.1 36.0,40.0"/><polyline pathLength="1" points="38.4,12.3 37.6,13.0 36.5,13.7 35.0,14.3 33.2,14.9 31.2,15.5 28.8,16.1 26.2,16.6 23.4,17.0 20.4,17.4 17.1,17.7 13.8,18.0 10.3,18.2 6.7,18.4 3.1,18.5 -0.6,18.5 -4.3,18.5 -7.9,18.3 -11.5,18.2 -14.9,17.9 -18.2,17.6 -21.4,17.3 -24.4,16.9 -27.1,16.4 -29.6,15.9 -31.9,15.3 -33.9,14.7 -35.5,14.1 -36.9,13.4 -37.9,12.8 -38.4,12.3"/><polyline pathLength="1" points="-20.7,-64.2 -20.3,-59.6 -21.4,-54.8 -23.7,-50.2 -27.1,-46.0 -31.6,-42.3 -37.0,-39.3 -42.9,-37.1 -49.1,-35.9 -55.3,-35.6 -61.4,-36.4 -66.9,-38.1 -71.6,-40.7 -75.4,-44.1 -78.1,-48.1 -79.5,-52.5 -79.6,-57.2 -78.3,-61.9 -75.8,-66.5 -72.2,-70.7 -67.5,-74.3 -62.1,-77.1 -56.1,-79.2 -49.9,-80.2 -43.6,-80.3 -37.7,-79.4 -32.3,-77.5 -27.7,-74.8 -24.0,-71.3 -21.6,-67.2 -20.7,-64.2"/><polyline pathLength="1" points="-65.7,-76.1 -65.7,-76.6 -65.6,-77.1 -65.3,-77.6 -64.9,-78.2 -64.3,-78.7 -63.6,-79.3 -62.7,-79.8 -61.8,-80.4 -60.7,-80.9 -59.5,-81.4 -58.3,-81.9 -56.9,-82.3 -55.6,-82.8 -54.1,-83.1 -52.7,-83.5 -51.2,-83.7 -49.8,-83.9 -48.4,-84.1 -47.0,-84.2 -45.7,-84.3 -44.4,-84.3 -43.3,-84.2 -42.2,-84.1 -41.2,-83.9 -40.4,-83.7 -39.7,-83.4 -39.1,-83.0 -38.7,-82.6 -38.4,-82.2 -38.3,-81.9"/><polyline pathLength="1" points="-50.5,-87.0 -50.6,-86.2 -50.9,-85.4 -51.4,-84.6 -52.0,-84.0 -52.8,-83.5 -53.7,-83.2 -54.6,-83.0 -55.6,-83.0 -56.5,-83.2 -57.3,-83.6 -58.1,-84.1 -58.7,-84.7 -59.2,-85.5 -59.4,-86.3 -59.5,-87.1 -59.4,-88.0 -59.0,-88.8 -58.5,-89.5 -57.9,-90.1 -57.1,-90.6 -56.2,-90.9 -55.2,-91.0 -54.3,-90.9 -53.4,-90.7 -52.5,-90.3 -51.8,-89.8 -51.2,-89.1 -50.8,-88.4 -50.5,-87.6 -50.5,-87.0"/><polyline pathLength="1" points="-22.0,-62.0 -18.9,-62.1 -16.0,-62.5 -13.2,-63.1 -10.7,-63.8 -8.4,-64.6 -6.1,-65.5 -4.0,-66.3 -2.0,-67.1 -0.1,-67.8 1.7,-68.3 3.5,-68.7 5.3,-68.7 7.1,-68.5 8.9,-67.9 10.7,-66.9 12.0,-66.0"/><polyline pathLength="1" points="-78.0,-70.0 -81.9,-70.0 -85.3,-69.3 -88.2,-68.1 -90.5,-66.4 -92.3,-64.3 -93.5,-61.9 -94.1,-59.4 -94.2,-56.8 -93.8,-54.3 -92.7,-51.9 -91.1,-49.7 -88.9,-47.9 -86.2,-46.6 -82.8,-45.8 -78.9,-45.7 -76.0,-46.0"/><polyline pathLength="1" points="12.0,-64.0 12.1,-59.8 11.9,-55.7 11.5,-51.5 11.0,-47.4 10.3,-43.2 9.5,-39.0 8.6,-34.8 7.7,-30.5 6.8,-26.2 5.9,-21.7 5.1,-17.2 4.4,-12.5 3.8,-7.7 3.3,-2.7 3.1,2.5 3.0,6.0"/><polyline pathLength="1" points="26.0,0.0 28.6,-2.7 30.4,-5.3 31.5,-7.9 32.1,-10.4 32.2,-13.0 31.9,-15.5 31.5,-18.1 30.9,-20.7 30.4,-23.3 30.0,-25.9 29.8,-28.6 30.0,-31.3 30.8,-34.1 32.1,-37.0 34.2,-40.0 36.0,-42.0"/><polyline pathLength="1" points="-24.0,0.0 -21.7,-2.3 -20.2,-4.5 -19.4,-6.7 -19.1,-8.9 -19.3,-11.1 -19.7,-13.2 -20.4,-15.4 -21.1,-17.6 -21.9,-19.8 -22.5,-22.1 -22.8,-24.4 -22.8,-26.8 -22.4,-29.2 -21.3,-31.7 -19.6,-34.2 -18.0,-36.0"/></svg></div><div class="mg-ho-copy"><span class="mg-ho-tag">HO1：<em>First</em><small>〈マイスター〉</small></span><p class="mg-ho-quote">「あなたは夢に飲まれている。」</p><p class="mg-ho-desc">店主・神応寺透の息子/娘である。紅茶とは幼少の頃からの付き合いで、5年前から紅茶マイスターとして働いている。夢の世界には何度か訪れたことがある。</p></div></article>
+      <article class="mg-ho-card mg-reveal"><div class="mg-ho-visual" aria-hidden="true"><span class="mg-ho-ring"></span><svg class="mg-ho-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline pathLength="1" points="82.0,46.0 80.2,49.6 74.8,53.0 66.0,56.1 54.3,58.7 40.2,60.8 24.2,62.2 7.2,62.9 -10.1,62.9 -27.0,62.1 -42.7,60.5 -56.4,58.3 -67.7,55.6 -75.9,52.4 -80.7,49.0 -81.9,45.4 -79.5,41.8 -73.5,38.5 -64.2,35.4 -52.1,32.9 -37.6,30.9 -21.5,29.6 -4.3,29.0 13.0,29.2 29.7,30.2 45.1,31.8 58.5,34.1 69.3,36.9 76.9,40.1 81.2,43.6 82.0,46.0"/><polyline pathLength="1" points="62.0,44.0 60.6,46.3 56.5,48.5 49.9,50.5 41.1,52.2 30.4,53.6 18.3,54.5 5.5,55.0 -7.6,54.9 -20.4,54.4 -32.3,53.4 -42.7,52.0 -51.2,50.2 -57.4,48.2 -61.0,45.9 -62.0,43.6 -60.1,41.3 -55.6,39.1 -48.6,37.2 -39.4,35.5 -28.4,34.2 -16.2,33.4 -3.3,33.0 9.8,33.1 22.5,33.7 34.1,34.8 44.2,36.3 52.4,38.1 58.2,40.2 61.4,42.5 62.0,44.0"/><polyline pathLength="1" points="-62.0,40.0 -60.9,27.5 -57.0,16.6 -50.7,7.5 -42.4,0.1 -32.6,-5.6 -21.7,-9.6 -10.0,-11.9 2.0,-12.5 14.0,-11.3 25.5,-8.5 36.1,-3.9 45.4,2.4 53.0,10.3 58.5,20.0 61.6,31.4 62.0,40.0"/><polyline pathLength="1" points="62.0,40.0 61.7,40.6 60.6,41.3 58.9,41.9 56.5,42.5 53.5,43.0 49.9,43.6 45.7,44.1 41.1,44.5 35.9,44.9 30.4,45.2 24.5,45.5 18.3,45.7 12.0,45.9 5.5,46.0 -1.1,46.0 -7.6,46.0 -14.1,45.8 -20.4,45.7 -26.5,45.4 -32.3,45.1 -37.7,44.8 -42.7,44.4 -47.2,43.9 -51.2,43.4 -54.6,42.8 -57.4,42.3 -59.5,41.7 -61.0,41.1 -61.8,40.4 -62.0,40.0"/><polyline pathLength="1" points="8.0,-17.5 7.8,-16.4 7.3,-15.4 6.4,-14.5 5.3,-13.8 3.9,-13.1 2.4,-12.7 0.7,-12.5 -1.0,-12.5 -2.6,-12.8 -4.2,-13.2 -5.5,-13.9 -6.6,-14.7 -7.4,-15.6 -7.9,-16.6 -8.0,-17.7 -7.8,-18.7 -7.2,-19.7 -6.3,-20.6 -5.1,-21.4 -3.7,-21.9 -2.1,-22.3 -0.4,-22.5 1.3,-22.4 2.9,-22.2 4.4,-21.7 5.7,-21.0 6.8,-20.2 7.5,-19.2 7.9,-18.2 8.0,-17.5"/><polyline pathLength="1" points="-42.0,14.0 -41.5,11.1 -40.8,8.3 -39.8,5.9 -38.6,3.6 -37.3,1.5 -35.8,-0.3 -34.0,-2.0 -32.2,-3.5 -30.2,-4.8 -28.0,-6.0 -25.8,-7.0 -23.4,-7.9 -20.9,-8.6 -18.4,-9.2 -15.8,-9.7 -14.0,-10.0"/><polyline pathLength="1" points="-12.0,-30.0 -9.4,-33.0 -7.5,-36.0 -6.3,-38.8 -5.6,-41.7 -5.3,-44.5 -5.4,-47.3 -5.7,-50.1 -6.1,-53.0 -6.4,-55.9 -6.6,-58.9 -6.6,-61.9 -6.2,-65.1 -5.4,-68.4 -4.0,-71.9 -1.9,-75.5 0.0,-78.0"/><polyline pathLength="1" points="16.0,-28.0 18.3,-30.7 19.8,-33.3 20.8,-35.9 21.2,-38.5 21.2,-41.1 20.9,-43.7 20.5,-46.3 19.9,-48.9 19.4,-51.7 18.9,-54.4 18.7,-57.3 18.9,-60.2 19.5,-63.3 20.6,-66.4 22.4,-69.7 24.0,-72.0"/><polyline pathLength="1" points="-98.0,78.0 -98.0,0.0"/><polyline pathLength="1" points="-106.0,-36.0 -105.8,-28.5 -105.3,-22.0 -104.5,-16.5 -103.4,-12.0 -102.2,-8.6 -100.8,-6.2 -99.3,-4.9 -97.7,-4.5 -96.2,-5.2 -94.8,-6.9 -93.4,-9.6 -92.2,-13.4 -91.2,-18.2 -90.5,-24.0 -90.1,-30.9 -90.0,-36.0"/><polyline pathLength="1" points="-98.0,-36.0 -98.0,-4.0"/><polyline pathLength="1" points="96.0,78.0 96.0,-40.0"/><polyline pathLength="1" points="96.0,-40.0 98.1,-37.8 99.9,-35.1 101.4,-32.0 102.6,-28.5 103.4,-24.8 104.0,-20.9 104.2,-16.9 104.2,-12.8 104.0,-8.9 103.4,-5.0 102.6,-1.4 101.6,1.9 100.4,4.8 98.9,7.2 97.2,9.1 96.0,10.0"/></svg></div><div class="mg-ho-copy"><span class="mg-ho-tag">HO2：<em>Second</em><small>〈コック〉</small></span><p class="mg-ho-quote">「あなたは夢が自在であった。」</p><p class="mg-ho-desc">アルバイトの友人・逢瀬から勧誘され、2年前からシェフとして働いている。夢の中に行かなくてはならない場所がある。</p></div></article>
+      <article class="mg-ho-card mg-reveal"><div class="mg-ho-visual" aria-hidden="true"><span class="mg-ho-ring"></span><svg class="mg-ho-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline pathLength="1" points="88.0,40.0 86.0,44.0 80.2,47.8 70.8,51.3 58.3,54.2 43.1,56.6 26.0,58.2 7.8,58.9 -10.8,58.9 -29.0,57.9 -45.8,56.2 -60.6,53.8 -72.6,50.7 -81.4,47.2 -86.6,43.3 -87.9,39.3 -85.3,35.4 -78.9,31.6 -68.9,28.2 -55.9,25.3 -40.4,23.1 -23.0,21.7 -4.7,21.0 13.9,21.2 31.9,22.3 48.4,24.1 62.8,26.7 74.3,29.8 82.6,33.4 87.1,37.3 88.0,40.0"/><polyline pathLength="1" points="80.0,40.0 78.2,43.2 72.9,46.2 64.4,48.9 53.0,51.2 39.2,53.1 23.6,54.3 7.1,54.9 -9.9,54.9 -26.3,54.2 -41.6,52.8 -55.1,50.9 -66.0,48.5 -74.0,45.7 -78.8,42.6 -80.0,39.5 -77.6,36.3 -71.7,33.4 -62.7,30.7 -50.8,28.4 -36.7,26.7 -20.9,25.5 -4.2,25.0 12.7,25.2 29.0,26.0 44.0,27.5 57.1,29.5 67.6,32.0 75.1,34.8 79.2,37.9 80.0,40.0"/><polyline pathLength="1" points="-30.0,59.0 -27.7,61.3 -24.8,63.3 -21.4,65.0 -17.5,66.4 -13.2,67.5 -8.7,68.2 -4.0,68.6 0.8,68.7 5.6,68.5 10.2,68.0 14.7,67.2 18.8,66.0 22.6,64.5 25.9,62.7 28.6,60.6 30.0,59.0"/><polyline pathLength="1" points="-16.0,8.0 -16.4,9.1 -17.8,10.1 -19.9,11.0 -22.8,11.7 -26.2,12.4 -30.1,12.8 -34.2,13.0 -38.5,13.0 -42.6,12.7 -46.4,12.3 -49.8,11.6 -52.5,10.8 -54.5,9.9 -55.7,8.9 -56.0,7.8 -55.4,6.8 -53.9,5.8 -51.7,4.9 -48.7,4.1 -45.2,3.6 -41.2,3.2 -37.1,3.0 -32.8,3.1 -28.8,3.3 -25.0,3.8 -21.7,4.5 -19.1,5.3 -17.2,6.3 -16.2,7.3 -16.0,8.0"/><polyline pathLength="1" points="-56.0,8.0 -55.7,12.0 -55.2,15.6 -54.4,18.8 -53.5,21.6 -52.4,24.0 -51.2,26.1 -49.8,28.0 -48.4,29.5 -46.8,30.7 -45.2,31.8 -43.6,32.6 -41.9,33.2 -40.3,33.6 -38.6,33.8 -37.0,34.0 -36.0,34.0 -34.4,33.9 -32.8,33.8 -31.2,33.5 -29.5,33.0 -27.8,32.3 -26.2,31.5 -24.6,30.4 -23.1,29.0 -21.7,27.4 -20.4,25.5 -19.2,23.2 -18.2,20.7 -17.3,17.7 -16.6,14.4 -16.2,10.7 -16.0,8.0"/><polyline pathLength="1" points="-17.0,12.0 -14.3,11.8 -12.0,12.0 -10.1,12.6 -8.5,13.4 -7.3,14.4 -6.5,15.7 -6.1,17.0 -6.2,18.4 -6.6,19.7 -7.4,21.1 -8.6,22.3 -10.3,23.4 -12.4,24.2 -14.9,24.8 -17.8,25.0 -20.0,25.0"/><polyline pathLength="1" points="53.0,-30.0 52.6,-29.1 51.5,-28.2 49.7,-27.3 47.3,-26.6 44.3,-26.1 41.0,-25.7 37.5,-25.5 33.9,-25.5 30.4,-25.8 27.2,-26.2 24.3,-26.7 22.0,-27.5 20.3,-28.3 19.3,-29.2 19.0,-30.2 19.5,-31.1 20.8,-32.0 22.7,-32.8 25.2,-33.5 28.2,-34.0 31.6,-34.3 35.1,-34.5 38.7,-34.4 42.2,-34.2 45.4,-33.8 48.1,-33.2 50.4,-32.4 52.0,-31.6 52.8,-30.6 53.0,-30.0"/><polyline pathLength="1" points="19.0,-30.0 19.1,-24.9 19.5,-20.2 20.1,-16.0 20.9,-12.3 21.8,-8.9 22.9,-6.0 24.2,-3.4 25.5,-1.2 26.9,0.7 28.3,2.3 29.7,3.6 31.2,4.5 32.6,5.2 33.9,5.7 35.2,6.0 36.0,6.0 37.2,5.9 38.5,5.6 39.9,5.0 41.3,4.2 42.8,3.2 44.2,1.8 45.6,0.1 47.0,-1.9 48.3,-4.2 49.4,-6.9 50.5,-10.0 51.4,-13.5 52.1,-17.4 52.6,-21.7 52.9,-26.5 53.0,-30.0"/><polyline pathLength="1" points="36.0,6.0 36.0,30.0"/><polyline pathLength="1" points="48.0,31.0 47.7,31.6 46.9,32.2 45.7,32.8 43.9,33.2 41.9,33.6 39.5,33.9 37.1,34.0 34.5,34.0 32.1,33.8 29.8,33.6 27.7,33.2 26.1,32.7 24.9,32.1 24.2,31.5 24.0,30.9 24.4,30.3 25.2,29.7 26.6,29.1 28.4,28.7 30.5,28.3 32.9,28.1 35.4,28.0 37.9,28.0 40.3,28.2 42.6,28.5 44.6,28.9 46.1,29.4 47.3,30.0 47.9,30.6 48.0,31.0"/><polyline pathLength="1" points="0.0,-66.0 -36.4,-81.2 -37.4,-78.9 -38.3,-76.6 -39.0,-74.4 -39.6,-72.1 -40.0,-69.8 -40.3,-67.6 -40.5,-65.4 -40.5,-63.2 -40.3,-61.0 -40.0,-58.8 -39.6,-56.7 -39.0,-54.6 -38.3,-52.6 -37.4,-50.6 -36.4,-48.6 0.0,-62.0"/><polyline pathLength="1" points="-0.0,-66.0 36.4,-81.2 37.4,-78.9 38.3,-76.6 39.0,-74.4 39.6,-72.1 40.0,-69.8 40.3,-67.6 40.5,-65.4 40.5,-63.2 40.3,-61.0 40.0,-58.8 39.6,-56.7 39.0,-54.6 38.3,-52.6 37.4,-50.6 36.4,-48.6 -0.0,-62.0"/><polyline pathLength="1" points="7.0,-64.0 6.8,-62.3 6.4,-60.7 5.6,-59.3 4.6,-58.0 3.4,-57.0 2.1,-56.4 0.6,-56.0 -0.9,-56.1 -2.3,-56.4 -3.6,-57.2 -4.8,-58.2 -5.8,-59.5 -6.5,-61.0 -6.9,-62.6 -7.0,-64.3 -6.8,-66.0 -6.3,-67.5 -5.5,-69.0 -4.4,-70.2 -3.2,-71.1 -1.8,-71.7 -0.4,-72.0 1.1,-71.9 2.5,-71.5 3.9,-70.7 5.0,-69.6 5.9,-68.3 6.6,-66.8 6.9,-65.1 7.0,-64.0"/></svg></div><div class="mg-ho-copy"><span class="mg-ho-tag">HO3：<em>Autumnal</em><small>〈ウェイター〉</small></span><p class="mg-ho-quote">「あなたは夢を従えている。」</p><p class="mg-ho-desc">神応寺透に勧誘されて3年前からウェイターとして働いている。なぜか戦いの心得がある。</p></div></article>
+      <article class="mg-ho-card mg-reveal"><div class="mg-ho-visual" aria-hidden="true"><span class="mg-ho-ring"></span><svg class="mg-ho-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline pathLength="1" points="60.0,-14.0 58.7,-10.8 54.7,-7.8 48.3,-5.1 39.7,-2.8 29.4,-0.9 17.7,0.3 5.3,0.9 -7.4,0.9 -19.7,0.2 -31.2,-1.2 -41.3,-3.1 -49.5,-5.5 -55.5,-8.3 -59.1,-11.4 -60.0,-14.5 -58.2,-17.7 -53.8,-20.6 -47.0,-23.3 -38.1,-25.6 -27.5,-27.3 -15.7,-28.5 -3.2,-29.0 9.5,-28.8 21.7,-28.0 33.0,-26.5 42.8,-24.5 50.7,-22.0 56.3,-19.2 59.4,-16.1 60.0,-14.0"/><polyline pathLength="1" points="-60.0,-14.0 -60.0,30.0"/><polyline pathLength="1" points="60.0,-14.0 60.0,30.0"/><polyline pathLength="1" points="60.0,30.0 59.7,31.6 58.7,33.2 57.0,34.7 54.7,36.2 51.8,37.6 48.3,38.9 44.3,40.1 39.7,41.2 34.8,42.2 29.4,43.1 23.7,43.8 17.7,44.3 11.6,44.7 5.3,44.9 -1.1,45.0 -7.4,44.9 -13.6,44.6 -19.7,44.2 -25.6,43.6 -31.2,42.8 -36.5,41.9 -41.3,40.9 -45.7,39.7 -49.5,38.5 -52.8,37.1 -55.5,35.7 -57.6,34.2 -59.1,32.6 -59.9,31.1 -60.0,30.0"/><polyline pathLength="1" points="60.0,1.0 59.7,2.6 58.7,4.2 57.0,5.7 54.7,7.2 51.8,8.6 48.3,9.9 44.3,11.1 39.7,12.2 34.8,13.2 29.4,14.1 23.7,14.8 17.7,15.3 11.6,15.7 5.3,15.9 -1.1,16.0 -7.4,15.9 -13.6,15.6 -19.7,15.2 -25.6,14.6 -31.2,13.8 -36.5,12.9 -41.3,11.9 -45.7,10.7 -49.5,9.5 -52.8,8.1 -55.5,6.7 -57.6,5.2 -59.1,3.6 -59.9,2.1 -60.0,1.0"/><polyline pathLength="1" points="60.0,13.0 59.7,14.6 58.7,16.2 57.0,17.7 54.7,19.2 51.8,20.6 48.3,21.9 44.3,23.1 39.7,24.2 34.8,25.2 29.4,26.1 23.7,26.8 17.7,27.3 11.6,27.7 5.3,27.9 -1.1,28.0 -7.4,27.9 -13.6,27.6 -19.7,27.2 -25.6,26.6 -31.2,25.8 -36.5,24.9 -41.3,23.9 -45.7,22.7 -49.5,21.5 -52.8,20.1 -55.5,18.7 -57.6,17.2 -59.1,15.6 -59.9,14.1 -60.0,13.0"/><polyline pathLength="1" points="-47.5,24.2 -47.5,23.4 -47.3,22.7 -47.1,22.0 -46.8,21.3 -46.5,20.6 -46.0,20.0 -45.5,19.5 -45.0,18.9 -44.3,18.5 -43.7,18.1 -43.0,17.7 -42.2,17.5 -41.4,17.3 -40.7,17.2 -39.9,17.2 -39.1,17.2 -38.3,17.4 -37.5,17.6 -36.8,17.9 -36.1,18.2 -35.4,18.6 -34.8,19.1 -34.3,19.6 -33.8,20.2 -33.4,20.9 -33.1,21.5 -32.8,22.2 -32.6,23.0 -32.5,23.7 -32.5,24.2"/><polyline pathLength="1" points="-20.5,27.6 -20.5,26.9 -20.3,26.2 -20.1,25.5 -19.8,24.8 -19.5,24.1 -19.0,23.5 -18.5,22.9 -18.0,22.4 -17.3,21.9 -16.7,21.5 -16.0,21.2 -15.2,21.0 -14.4,20.8 -13.7,20.7 -12.9,20.6 -12.1,20.7 -11.3,20.8 -10.5,21.0 -9.8,21.3 -9.1,21.7 -8.4,22.1 -7.8,22.6 -7.3,23.1 -6.8,23.7 -6.4,24.3 -6.1,25.0 -5.8,25.7 -5.6,26.4 -5.5,27.1 -5.5,27.6"/><polyline pathLength="1" points="6.5,27.6 6.5,26.8 6.7,26.1 6.9,25.4 7.2,24.7 7.5,24.1 8.0,23.4 8.5,22.9 9.0,22.3 9.7,21.9 10.3,21.5 11.0,21.2 11.8,20.9 12.6,20.7 13.3,20.6 14.1,20.6 14.9,20.6 15.7,20.8 16.5,21.0 17.2,21.3 17.9,21.6 18.6,22.0 19.2,22.5 19.7,23.0 20.2,23.6 20.6,24.3 20.9,24.9 21.2,25.6 21.4,26.4 21.5,27.1 21.5,27.6"/><polyline pathLength="1" points="33.5,24.0 33.5,23.2 33.7,22.5 33.9,21.8 34.2,21.1 34.5,20.4 35.0,19.8 35.5,19.2 36.0,18.7 36.7,18.2 37.3,17.8 38.0,17.5 38.8,17.3 39.6,17.1 40.3,17.0 41.1,17.0 41.9,17.0 42.7,17.1 43.5,17.3 44.2,17.6 44.9,18.0 45.6,18.4 46.2,18.9 46.7,19.4 47.2,20.0 47.6,20.6 47.9,21.3 48.2,22.0 48.4,22.7 48.5,23.5 48.5,24.0"/><polyline pathLength="1" points="43.1,-8.7 42.8,-9.8 42.7,-10.9 42.9,-11.9 43.1,-12.8 43.5,-13.7 44.1,-14.5 44.7,-15.2 45.3,-15.9 46.0,-16.5 46.7,-17.0 47.4,-17.5 48.1,-18.0 48.7,-18.5 49.2,-18.9 49.6,-19.2 49.8,-19.5 50.2,-19.9 50.6,-20.3 50.9,-20.5 51.3,-20.7 51.7,-20.8 52.0,-20.8 52.3,-20.7 52.6,-20.6 52.8,-20.3 53.0,-20.1 53.1,-19.7 53.1,-19.4 53.1,-18.9 53.0,-18.5 52.7,-18.0 52.5,-17.7 53.4,-17.3 54.2,-16.8 54.8,-16.3 55.4,-15.7 55.9,-15.1 56.3,-14.4 56.6,-13.7 56.9,-13.0 57.1,-12.4 57.2,-11.7 57.2,-11.0 57.2,-10.4 57.1,-9.9 57.0,-9.3 56.8,-8.9 56.6,-8.7"/><polyline pathLength="1" points="26.4,-2.1 26.1,-3.3 26.1,-4.4 26.2,-5.4 26.5,-6.3 26.9,-7.1 27.4,-7.9 28.0,-8.6 28.6,-9.3 29.3,-9.9 30.1,-10.5 30.8,-11.0 31.4,-11.5 32.0,-11.9 32.5,-12.3 33.0,-12.7 33.2,-12.9 33.5,-13.4 33.9,-13.7 34.3,-14.0 34.6,-14.2 35.0,-14.2 35.3,-14.2 35.6,-14.2 35.9,-14.0 36.1,-13.8 36.3,-13.5 36.4,-13.2 36.5,-12.8 36.4,-12.4 36.3,-11.9 36.1,-11.5 35.9,-11.1 36.7,-10.7 37.5,-10.3 38.2,-9.7 38.7,-9.2 39.2,-8.5 39.6,-7.9 40.0,-7.2 40.2,-6.5 40.4,-5.8 40.5,-5.1 40.5,-4.5 40.5,-3.9 40.4,-3.3 40.3,-2.8 40.1,-2.4 39.9,-2.1"/><polyline pathLength="1" points="-6.7,0.9 -7.0,-0.3 -7.1,-1.3 -7.0,-2.3 -6.7,-3.3 -6.3,-4.1 -5.8,-4.9 -5.2,-5.6 -4.5,-6.3 -3.8,-6.9 -3.1,-7.5 -2.4,-8.0 -1.7,-8.5 -1.1,-8.9 -0.6,-9.3 -0.2,-9.7 0.0,-9.9 0.4,-10.4 0.7,-10.7 1.1,-11.0 1.5,-11.1 1.8,-11.2 2.2,-11.2 2.5,-11.1 2.7,-11.0 3.0,-10.8 3.1,-10.5 3.3,-10.2 3.3,-9.8 3.3,-9.4 3.1,-8.9 2.9,-8.4 2.7,-8.1 3.6,-7.7 4.3,-7.2 5.0,-6.7 5.6,-6.1 6.1,-5.5 6.5,-4.9 6.8,-4.2 7.0,-3.5 7.2,-2.8 7.3,-2.1 7.4,-1.5 7.3,-0.9 7.3,-0.3 7.1,0.2 6.9,0.7 6.8,0.9"/><polyline pathLength="1" points="-39.9,-2.1 -40.2,-3.3 -40.3,-4.4 -40.2,-5.4 -39.9,-6.3 -39.5,-7.1 -39.0,-7.9 -38.4,-8.6 -37.7,-9.3 -37.0,-9.9 -36.3,-10.5 -35.6,-11.0 -34.9,-11.5 -34.3,-11.9 -33.8,-12.3 -33.4,-12.7 -33.2,-12.9 -32.8,-13.4 -32.4,-13.7 -32.1,-14.0 -31.7,-14.2 -31.3,-14.2 -31.0,-14.2 -30.7,-14.2 -30.4,-14.0 -30.2,-13.8 -30.0,-13.5 -29.9,-13.2 -29.9,-12.8 -29.9,-12.4 -30.0,-11.9 -30.3,-11.5 -30.5,-11.1 -29.6,-10.7 -28.9,-10.3 -28.2,-9.7 -27.6,-9.2 -27.1,-8.5 -26.7,-7.9 -26.4,-7.2 -26.1,-6.5 -26.0,-5.8 -25.8,-5.1 -25.8,-4.5 -25.8,-3.9 -25.9,-3.3 -26.1,-2.8 -26.3,-2.4 -26.4,-2.1"/><polyline pathLength="1" points="-55.2,-7.6 -55.5,-8.8 -55.6,-9.8 -55.5,-10.8 -55.2,-11.8 -54.8,-12.6 -54.3,-13.4 -53.7,-14.1 -53.0,-14.8 -52.3,-15.4 -51.6,-16.0 -50.9,-16.5 -50.2,-16.9 -49.6,-17.4 -49.1,-17.8 -48.7,-18.2 -48.5,-18.4 -48.1,-18.9 -47.8,-19.2 -47.4,-19.5 -47.0,-19.6 -46.7,-19.7 -46.3,-19.7 -46.0,-19.6 -45.7,-19.5 -45.5,-19.3 -45.3,-19.0 -45.2,-18.7 -45.2,-18.3 -45.2,-17.9 -45.4,-17.4 -45.6,-16.9 -45.8,-16.6 -44.9,-16.2 -44.2,-15.7 -43.5,-15.2 -42.9,-14.6 -42.4,-14.0 -42.0,-13.3 -41.7,-12.7 -41.4,-12.0 -41.3,-11.3 -41.2,-10.6 -41.1,-10.0 -41.1,-9.4 -41.2,-8.8 -41.4,-8.3 -41.6,-7.8 -41.7,-7.6"/><polyline pathLength="1" points="-29.5,-16.0 -29.8,-17.7 -29.8,-19.3 -29.6,-20.8 -29.3,-22.3 -28.8,-23.8 -28.2,-25.1 -27.5,-26.3 -26.8,-27.5 -25.9,-28.5 -25.0,-29.4 -24.1,-30.2 -23.1,-30.9 -22.2,-31.4 -21.3,-31.8 -20.5,-32.0 -20.0,-32.0 -19.2,-31.9 -18.4,-31.7 -17.5,-31.2 -16.6,-30.7 -15.6,-30.0 -14.7,-29.1 -13.8,-28.2 -13.0,-27.1 -12.2,-25.9 -11.5,-24.7 -11.0,-23.3 -10.6,-21.8 -10.3,-20.3 -10.2,-18.7 -10.3,-17.1 -10.5,-16.0 -11.0,-15.1 -12.4,-14.3 -14.7,-13.7 -17.5,-13.3 -20.5,-13.2 -23.5,-13.4 -26.2,-13.9 -28.1,-14.6 -29.3,-15.4 -29.5,-16.0"/><polyline pathLength="1" points="-24.0,-21.0 -23.6,-22.6"/><polyline pathLength="1" points="-18.0,-23.0 -17.6,-24.6"/><polyline pathLength="1" points="-15.0,-19.5 -14.6,-21.1"/><polyline pathLength="1" points="-21.0,-26.5 -20.6,-28.1"/><polyline pathLength="1" points="-28.6,-14.8 -34.7,-18.0"/><polyline pathLength="1" points="-11.5,-14.8 -5.3,-18.0"/><polyline pathLength="1" points="-6.9,-11.0 -7.2,-12.9 -7.3,-14.8 -7.1,-16.6 -6.7,-18.3 -6.2,-19.9 -5.5,-21.5 -4.7,-22.9 -3.8,-24.2 -2.8,-25.4 -1.7,-26.5 -0.7,-27.4 0.4,-28.1 1.5,-28.7 2.5,-29.1 3.4,-29.4 4.0,-29.4 4.9,-29.3 5.9,-29.0 6.9,-28.5 7.9,-27.9 9.0,-27.1 10.1,-26.1 11.1,-25.0 12.1,-23.8 13.0,-22.4 13.7,-21.0 14.4,-19.4 14.9,-17.7 15.2,-16.0 15.3,-14.2 15.1,-12.3 14.9,-11.0 14.4,-10.0 12.7,-9.1 10.1,-8.3 6.9,-7.9 3.4,-7.8 -0.0,-8.0 -3.1,-8.5 -5.4,-9.3 -6.7,-10.3 -6.9,-11.0"/><polyline pathLength="1" points="-0.6,-16.8 -0.1,-18.6"/><polyline pathLength="1" points="6.3,-19.1 6.8,-20.9"/><polyline pathLength="1" points="9.8,-15.0 10.2,-16.9"/><polyline pathLength="1" points="2.9,-23.1 3.3,-24.9"/><polyline pathLength="1" points="-5.8,-9.6 -12.9,-13.3"/><polyline pathLength="1" points="13.8,-9.6 20.9,-13.3"/><polyline pathLength="1" points="16.5,-17.0 16.2,-18.7 16.2,-20.3 16.4,-21.8 16.7,-23.3 17.2,-24.8 17.8,-26.1 18.5,-27.3 19.2,-28.5 20.1,-29.5 21.0,-30.4 21.9,-31.2 22.9,-31.9 23.8,-32.4 24.7,-32.8 25.5,-33.0 26.0,-33.0 26.8,-32.9 27.6,-32.7 28.5,-32.2 29.4,-31.7 30.4,-31.0 31.3,-30.1 32.2,-29.2 33.0,-28.1 33.8,-26.9 34.5,-25.7 35.0,-24.3 35.4,-22.8 35.7,-21.3 35.8,-19.7 35.7,-18.1 35.5,-17.0 35.0,-16.1 33.6,-15.3 31.3,-14.7 28.5,-14.3 25.5,-14.2 22.5,-14.4 19.8,-14.9 17.9,-15.6 16.7,-16.4 16.5,-17.0"/><polyline pathLength="1" points="22.0,-22.0 22.4,-23.6"/><polyline pathLength="1" points="28.0,-24.0 28.4,-25.6"/><polyline pathLength="1" points="31.0,-20.5 31.4,-22.1"/><polyline pathLength="1" points="25.0,-27.5 25.4,-29.1"/><polyline pathLength="1" points="17.4,-15.8 11.3,-19.0"/><polyline pathLength="1" points="34.6,-15.8 40.7,-19.0"/><polyline pathLength="1" points="86.0,37.0 85.5,39.0 84.1,41.0 81.7,42.9 78.4,44.8 74.2,46.6 69.2,48.3 63.4,49.8 56.9,51.2 49.8,52.5 42.1,53.6 34.0,54.5 25.4,55.2 16.6,55.6 7.6,55.9 -1.5,56.0 -10.6,55.9 -19.6,55.5 -28.3,54.9 -36.7,54.2 -44.7,53.2 -52.3,52.1 -59.2,50.8 -65.4,49.3 -71.0,47.7 -75.7,46.0 -79.6,44.2 -82.6,42.3 -84.7,40.3 -85.8,38.3 -86.0,37.0"/><polyline pathLength="1" points="-86.0,37.0 -85.3,34.6 -83.3,32.3 -79.9,30.0 -75.3,27.8 -69.5,25.8 -62.6,24.0 -60.1,23.4"/><polyline pathLength="1" points="60.1,23.4 67.3,25.2 73.5,27.1 78.5,29.3 82.3,31.5 84.8,33.8 85.9,36.2 86.0,37.0"/><polyline pathLength="1" points="86.0,40.5 85.5,42.5 84.1,44.5 81.7,46.4 78.4,48.3 74.2,50.1 69.2,51.8 63.4,53.3 56.9,54.7 49.8,56.0 42.1,57.1 34.0,58.0 25.4,58.7 16.6,59.1 7.6,59.4 -1.5,59.5 -10.6,59.4 -19.6,59.0 -28.3,58.4 -36.7,57.7 -44.7,56.7 -52.3,55.6 -59.2,54.3 -65.4,52.8 -71.0,51.2 -75.7,49.5 -79.6,47.7 -82.6,45.8 -84.7,43.8 -85.8,41.8 -86.0,40.5"/><polyline pathLength="1" points="-7.0,59.0 -5.0,76.0"/><polyline pathLength="1" points="7.0,59.0 5.0,76.0"/><polyline pathLength="1" points="30.0,79.0 29.3,80.3 27.3,81.5 24.1,82.6 19.9,83.5 14.7,84.2 8.9,84.7 2.6,85.0 -3.7,85.0 -9.9,84.7 -15.6,84.1 -20.6,83.4 -24.8,82.4 -27.8,81.3 -29.5,80.1 -30.0,78.8 -29.1,77.5 -26.9,76.3 -23.5,75.3 -19.1,74.4 -13.8,73.7 -7.8,73.2 -1.6,73.0 4.7,73.1 10.9,73.4 16.5,74.0 21.4,74.8 25.3,75.8 28.2,76.9 29.7,78.2 30.0,79.0"/></svg></div><div class="mg-ho-copy"><span class="mg-ho-tag">HO4：<em>Off</em><small>〈パティシエ〉</small></span><p class="mg-ho-quote">「あなたは夢が愛おしかった。」</p><p class="mg-ho-desc">神応寺透の古い友人であり、4年前からパティシエとして働いている。幸せな夢を見ることが多い。</p></div></article>
     </div>
-    <div class="grid grid-2">
-      <div class="ho-card">
-        <span class="ho-tag">HO1：First〈マイスター〉</span>
-        <p class="ho-quote">「あなたは夢に飲まれている。」</p>
-        <p class="desc">店主・神応寺透の息子/娘である。紅茶とは幼少の頃からの付き合いで、5年前から紅茶マイスターとして働いている。夢の世界には何度か訪れたことがある。</p>
-      </div>
-      <div class="ho-card">
-        <span class="ho-tag">HO2：Second〈コック〉</span>
-        <p class="ho-quote">「あなたは夢が自在であった。」</p>
-        <p class="desc">アルバイトの友人・逢瀬から勧誘され、2年前からシェフとして働いている。夢の中に行かなくてはならない場所がある。</p>
-      </div>
-      <div class="ho-card">
-        <span class="ho-tag">HO3：Autumnal〈ウェイター〉</span>
-        <p class="ho-quote">「あなたは夢を従えている。」</p>
-        <p class="desc">神応寺透に勧誘されて3年前からウェイターとして働いている。なぜか戦いの心得がある。</p>
-      </div>
-      <div class="ho-card">
-        <span class="ho-tag">HO4：Off〈パティシエ〉</span>
-        <p class="ho-quote">「あなたは夢が愛おしかった。」</p>
-        <p class="desc">神応寺透の古い友人であり、4年前からパティシエとして働いている。幸せな夢を見ることが多い。</p>
-      </div>
-    </div>
-    <div class="center mt-lg">
-      <a class="btn btn-outline" href="handout.html">各HOの詳細ハンドアウトへ →</a>
-    </div>
+    <div class="mg-center mg-reveal"><a class="mg-outline-button" href="handout.html">各HOの詳細ハンドアウトへ <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="section-head" data-no="03">
-      <p class="kicker">Recommended</p>
-      <h2>こんな人におすすめ</h2>
-    </div>
-    <ul class="recommend-list">
-      <li>ドリームランドを本格的に探索してみたい</li>
-      <li>高難易度＆特殊な戦闘を味わいたい</li>
-      <li>紅茶が好き、詳しくなってみたい</li>
-    </ul>
-  </div>
-</section>
+<section class="mg-recommend-section mg-cream" aria-labelledby="recommend-title"><div class="container"><div class="mg-section-head mg-section-reveal"><p class="mg-kicker">Recommended</p><h2 id="recommend-title">こんな人におすすめ</h2></div><ul class="mg-recommend-list"><li class="mg-reveal"><svg viewBox="0 0 38 30" aria-hidden="true"><path d="M3 15l10 10L35 3"/></svg><span>ドリームランドを本格的に探索してみたい</span></li><li class="mg-reveal"><svg viewBox="0 0 38 30" aria-hidden="true"><path d="M3 15l10 10L35 3"/></svg><span>高難易度＆特殊な戦闘を味わいたい</span></li><li class="mg-reveal"><svg viewBox="0 0 38 30" aria-hidden="true"><path d="M3 15l10 10L35 3"/></svg><span>紅茶が好き、詳しくなってみたい</span></li></ul></div></section>
 
-<section class="alt">
-  <div class="container">
-    <div class="notice">
+<section class="mg-notice-section mg-cream-alt" aria-label="注意事項"><div class="container"><div class="notice mg-notice">
 ※神話生物及び呪文、アーティファクトの独自解釈が含まれます
 ※本作には、現実的な死を扱う場面が含まれます
 ※PvPの可能性があります
 ※この作品はフィクションです。実在の団体・人名・事件とは一切関係ありません
 ※本シナリオはCoCサプリメント「ラヴクラフトの幻夢境」を参照しております。KPは所持推奨です
 ※HOによってトラウマを刺激する描写がございます。生々しい描写が苦手な方はプレイ非推奨です
-    </div>
-  </div>
-</section>
+    </div></div></section>
 
+<section class="mg-final-cta mg-dark" aria-label="購入案内"><div class="container"><p>いらっしゃいませ、喫茶アストレアへ。</p><a class="mg-gold-button" href="scenario.html">購入する <span aria-hidden="true">→</span></a></div></section>
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="foot-links">
-      <a href="https://booth.pm/ja/items/8045336" target="_blank" rel="noopener">BOOTH</a>
-      <a href="https://x.com/KASOkatsumata" target="_blank" rel="noopener">X (旧Twitter)</a>
-    </div>
+    <div class="foot-links"><a href="https://booth.pm/ja/items/8045336" target="_blank" rel="noopener">BOOTH</a><a href="https://x.com/KASOkatsumata" target="_blank" rel="noopener">X (旧Twitter)</a></div>
     <p>© KASO / 勝俣</p>
     <p>本作は「サンディ・ピーターセン、リン・ウィリス、中山てい子、坂本雅之」「株式会社KADOKAWA」が権利を有する『クトゥルフ神話TRPG』の二次創作物です。
 本シナリオの無断転載・二次配布・ネット上へのアップロードは禁止です。</p>
   </div>
 </footer>
-
 <script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/overview-mg.js?v=2"></script>
 </body>
 </html>
