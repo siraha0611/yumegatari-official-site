@@ -39,7 +39,7 @@
 .mg-hero::after{ content: ""; position: absolute; z-index: -1; inset: 0; opacity: .19; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E"); }
 .mg-particles{ position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .mg-hero-center{ position: relative; width: min(80vmin, 650px); aspect-ratio: 1; display: grid; place-items: center; }
-.mg-hero-ring{ position: absolute; inset: 0; color: var(--mg-gold); filter: drop-shadow(0 0 15px rgba(224,194,122,.12)); animation: mgRingTurn 70s linear infinite; }
+.mg-hero-ring{ position: absolute; inset: 0; translate: var(--mg-ring-x, 0) var(--mg-ring-y, 0); color: var(--mg-gold); filter: drop-shadow(0 0 15px rgba(224,194,122,.12)); animation: mgRingTurn 70s linear infinite; }
 .mg-hero-ring svg{ width: 100%; height: 100%; overflow: visible; }
 .mg-ring-line,.mg-ring-arc{ fill: none; stroke: currentColor; stroke-width: .65; vector-effect: non-scaling-stroke; }
 .mg-ring-line-outer{ stroke-dasharray: 2 6; stroke-width: 1.15; }
@@ -48,7 +48,7 @@
 .mg-ring-arc{ stroke-width: 1.5; stroke-dasharray: 440; stroke-dashoffset: 440; animation: mgDrawRing 2s var(--mg-ease) .55s forwards; }
 .mg-ring-arc-reverse{ opacity: .65; }
 .mg-ring-ticks{ fill: currentColor; opacity: .72; }
-.mg-hero-copy{ position: relative; z-index: 2; max-width: 580px; padding: 36px; text-align: center; text-shadow: 0 3px 25px #090603; }
+.mg-hero-copy{ position: relative; z-index: 2; max-width: 580px; padding: 36px; translate: var(--mg-copy-x, 0) var(--mg-copy-y, 0); text-align: center; text-shadow: 0 3px 25px #090603; }
 .mg-hero-copy h1{ margin: 0; font-family: var(--mg-en); font-size: clamp(3.25rem, 10vw, 7.7rem); font-style: italic; font-weight: 500; line-height: .82; letter-spacing: .045em; }
 .mg-hero-jp{ margin: 20px 0 0; font-family: var(--mg-display); font-size: clamp(.9rem, 1.7vw, 1.3rem); letter-spacing: .55em; text-indent: .55em; }
 .mg-tagline{ margin: 24px auto 0; color: rgba(246,236,216,.78); font-size: clamp(.74rem, 1.35vw, .94rem); letter-spacing: .08em; }
@@ -99,6 +99,14 @@
 .mg-play-button:hover .mg-play-ring{ transform: scale(1.08); box-shadow: 0 0 0 21px rgba(224,194,122,.08); }
 .mg-play-button:hover .mg-play-ring::before{ animation: mgRingTurn 5s linear infinite; }
 .mg-player-shell.is-playing .mg-play-button{ display: none; }
+.mg-player-shell.has-ended .mg-play-button{ display: none; }
+.mg-end-card[hidden]{ display: none; }
+.mg-end-card{ position: absolute; z-index: 6; inset: 0; display: grid; place-items: center; padding: clamp(18px, 4vw, 48px); opacity: 0; color: #f6ecd8; background: radial-gradient(circle at 50% 42%, rgba(49,34,16,.82), rgba(7,5,3,.96) 72%); transition: opacity .65s ease; }
+.mg-end-card.is-visible{ opacity: 1; }
+.mg-end-card-inner{ width: min(100%, 720px); text-align: center; }
+.mg-end-card-title{ margin: 0; font-family: var(--mg-display); font-size: clamp(1.2rem, 3vw, 2.15rem); letter-spacing: .12em; line-height: 1.6; }
+.mg-end-card-actions{ display: flex; justify-content: center; gap: 12px; margin-top: clamp(18px, 3vw, 32px); }
+.mg-end-replay{ appearance: none; cursor: pointer; }
 .mg-music-credit{ max-width: 980px; margin: 25px auto 0; color: rgba(239,230,210,.66); font-family: var(--mg-sans); font-size: clamp(.72rem, 1.5vw, .82rem); line-height: 1.8; text-align: center; }
 .mg-music-credit a{ color: var(--mg-gold); text-decoration: underline; text-underline-offset: 3px; }
 .mg-trailer-actions{ display: flex; justify-content: center; margin-top: 30px; }
@@ -226,6 +234,10 @@
   .mg-recommend-list li{ grid-template-columns: 32px 1fr; gap: 14px; font-size: .94rem; }
   .mg-recommend-list svg{ width: 28px; }
   .mg-final-cta .container{ flex-direction: column; text-align: center; }
+  .mg-end-card{ padding: 10px; }
+  .mg-end-card-title{ font-size: clamp(.84rem, 3.8vw, 1rem); letter-spacing: .05em; white-space: nowrap; }
+  .mg-end-card-actions{ flex-direction: column; align-items: center; gap: 6px; margin-top: 10px; }
+  .mg-end-card-actions .mg-gold-button,.mg-end-card-actions .mg-outline-button{ width: min(78%, 230px); min-height: 34px; padding: 6px 12px; font-size: .68rem; }
 }
 
 @media (prefers-reduced-motion: reduce){

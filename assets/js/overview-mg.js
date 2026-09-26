@@ -24,6 +24,7 @@
       initParticles();
       initParallax();
       initSmoothAnchor();
+      initHeroPointer();
     }
   });
 
@@ -32,7 +33,47 @@
       var video = shell.querySelector("video");
       var source = video && video.querySelector("source");
       var button = shell.querySelector(".mg-play-button");
+      var frame = shell.querySelector(".mg-video-frame");
       if (!video || !source) return;
+
+      var endCard = document.createElement("div");
+      endCard.className = "mg-end-card";
+      endCard.setAttribute("role", "group");
+      endCard.setAttribute("aria-label", "映像の終わり");
+      endCard.hidden = true;
+
+      var endInner = document.createElement("div");
+      endInner.className = "mg-end-card-inner";
+      var endTitle = document.createElement("p");
+      endTitle.className = "mg-end-card-title";
+      endTitle.textContent = "いらっしゃいませ、喫茶アストレアへ。";
+      var endActions = document.createElement("div");
+      endActions.className = "mg-end-card-actions";
+
+      var purchase = document.createElement("a");
+      purchase.className = "mg-gold-button";
+      purchase.href = "https://booth.pm/ja/items/8045336";
+      purchase.target = "_blank";
+      purchase.rel = "noopener";
+      purchase.textContent = "BOOTHで購入する →";
+
+      var replay = document.createElement("button");
+      replay.className = "mg-outline-button mg-end-replay";
+      replay.type = "button";
+      replay.textContent = "もう一度見る";
+
+      endActions.appendChild(purchase);
+      endActions.appendChild(replay);
+      endInner.appendChild(endTitle);
+      endInner.appendChild(endActions);
+      endCard.appendChild(endInner);
+      if (frame) frame.appendChild(endCard);
+
+      function hideEndCard() {
+        shell.classList.remove("has-ended");
+        endCard.classList.remove("is-visible");
+        endCard.hidden = true;
+      }
 
       if (use720) {
         source.setAttribute("src", "assets/video/yumeti-trailer-720.mp4");
@@ -41,7 +82,29 @@
 
       video.addEventListener("play", function () {
         shell.classList.add("is-playing");
+        hideEndCard();
         video.controls = true;
+      });
+
+      video.addEventListener("ended", function () {
+        shell.classList.add("has-ended");
+        video.controls = false;
+        endCard.hidden = false;
+        window.requestAnimationFrame(function () {
+          endCard.classList.add("is-visible");
+        });
+      });
+
+      replay.addEventListener("click", function () {
+        hideEndCard();
+        video.currentTime = 0;
+        video.controls = true;
+        var replayPromise = video.play();
+        if (replayPromise && typeof replayPromise.catch === "function") {
+          replayPromise.catch(function () {
+            video.controls = true;
+          });
+        }
       });
 
       if (!button) return;
@@ -172,6 +235,50 @@
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  function initHeroPointer() {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    var hero = document.querySelector(".mg-hero");
+    if (!hero) return;
+
+    var current = { ringX: 0, ringY: 0, copyX: 0, copyY: 0 };
+    var target = { ringX: 0, ringY: 0, copyX: 0, copyY: 0 };
+    var frame = 0;
+
+    function render() {
+      frame = 0;
+      var moving = false;
+      Object.keys(current).forEach(function (key) {
+        current[key] += (target[key] - current[key]) * 0.12;
+        if (Math.abs(target[key] - current[key]) > 0.02) moving = true;
+      });
+      hero.style.setProperty("--mg-ring-x", current.ringX.toFixed(2) + "px");
+      hero.style.setProperty("--mg-ring-y", current.ringY.toFixed(2) + "px");
+      hero.style.setProperty("--mg-copy-x", current.copyX.toFixed(2) + "px");
+      hero.style.setProperty("--mg-copy-y", current.copyY.toFixed(2) + "px");
+      if (moving) frame = window.requestAnimationFrame(render);
+    }
+
+    function schedule() {
+      if (!frame) frame = window.requestAnimationFrame(render);
+    }
+
+    hero.addEventListener("pointermove", function (event) {
+      var rect = hero.getBoundingClientRect();
+      var x = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width) * 2 - 1));
+      var y = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1));
+      target.ringX = x * 10;
+      target.ringY = y * 10;
+      target.copyX = x * -4;
+      target.copyY = y * -4;
+      schedule();
+    }, { passive: true });
+
+    hero.addEventListener("pointerleave", function () {
+      target.ringX = target.ringY = target.copyX = target.copyY = 0;
+      schedule();
     });
   }
 
