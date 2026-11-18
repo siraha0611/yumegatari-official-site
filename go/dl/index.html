@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>夢語りはティータイムのあとで 公式サイトは移転しました</title>
+<link rel="canonical" href="https://yumeti.kaso-kobo.com/go/dl/">
+<script>
+  // 2026-11-18 公式サイトは https://yumeti.kaso-kobo.com へ移転。
+  // 旧URL /yumegatari-official-site/〜 の下の階層・?・# を保ったまま新URLへ移す。
+  // 印刷物のQR（/go/〜）もここを通って新URLの /go/〜 に渡る＝飛び先の管理は新サイト側だけ。
+  (function () {
+    var oldBase = "/yumegatari-official-site";
+    var p = location.pathname;
+    if (p.indexOf(oldBase) === 0) p = p.slice(oldBase.length);
+    if (p === "" || p.charAt(0) !== "/") p = "/" + p;
+    location.replace("https://yumeti.kaso-kobo.com" + p + location.search + location.hash);
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://yumeti.kaso-kobo.com/go/dl/"></noscript>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px; background: #f4ece0; color: #3a2e25; font-family: serif; text-align: center; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<p>『夢語りはティータイムのあとで』の公式サイトは<br><a href="https://yumeti.kaso-kobo.com/go/dl/">yumeti.kaso-kobo.com</a> へ移転しました。</p>
+</body>
+</html>
