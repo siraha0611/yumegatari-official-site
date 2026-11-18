@@ -14,7 +14,7 @@ database_id = "ccb67d04-9a09-49a7-839e-f6cac10e0880"
 
 [vars]
 # 投稿・閲覧を許可するページのオリジン(カンマ区切り)。localhost/127.0.0.1 はコード側で常に許可
-ALLOWED_ORIGINS = "https://siraha0611.github.io"
+ALLOWED_ORIGINS = "https://yumeti.kaso-kobo.com,https://siraha0611.github.io"
 # 本文の最大文字数 / 名前の最大文字数
 BODY_MAX = "1500"
 NAME_MAX = "24"

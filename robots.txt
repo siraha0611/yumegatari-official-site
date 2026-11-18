@@ -1,11 +1,11 @@
 User-agent: *
 Allow: /
-Disallow: /ho1.html
-Disallow: /ho2.html
-Disallow: /ho3.html
-Disallow: /ho4.html
-Disallow: /truth.html
-Disallow: /book.html
-Disallow: /reviews.html
+Disallow: /ho1
+Disallow: /ho2
+Disallow: /ho3
+Disallow: /ho4
+Disallow: /truth
+Disallow: /book
+Disallow: /reviews
 
-Sitemap: https://siraha0611.github.io/yumegatari-official-site/sitemap.xml
+Sitemap: https://yumeti.kaso-kobo.com/sitemap.xml

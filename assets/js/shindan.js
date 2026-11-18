@@ -149,7 +149,7 @@
     document.getElementById("sd-r-desc").textContent = r.desc;
 
     var shareText = "私は" + r.title.replace(/あなた$/, "タイプ") + "でした！\n#夢語りはティータイムのあとで #HO診断 #CoC\n";
-    var url = "https://siraha0611.github.io/yumegatari-official-site/shindan.html";
+    var url = "https://yumeti.kaso-kobo.com/shindan.html";
     document.getElementById("sd-share").href =
       "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(url);
     elResult.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -1,7 +1,7 @@
 # 夢語りはティータイムのあとで 公式サイト
 
 クトゥルフ神話TRPG6版シナリオ『夢語りはティータイムのあとで』(通称:夢ティ)の公式サイト。
-静的HTML/CSS(+最小限のvanilla JS)のみで構成、ビルド不要。GitHub Pagesで公開。
+静的HTML/CSS(+最小限のvanilla JS)のみで構成。**https://yumeti.kaso-kobo.com （Cloudflare Pages）で公開**。
 
 サイト構成は TRPG シナリオサイトの定番構成(HOME / STORY / OVERVIEW / CHARACTER / KEYWORD / HO)を参考にしている。
 
@@ -48,10 +48,22 @@ python3 -m http.server 8000
 
 `http://localhost:8000/` を開く。
 
-## 公開
+## 公開（2026-11-18 から Cloudflare Pages）
 
-GitHub Pages(Settings → Pages → Branch: main / root)で公開。
-独自ドメインを設定する場合は `robots.txt` と `sitemap.xml` のURLを差し替えること。
+- 本番: https://yumeti.kaso-kobo.com （Cloudflare Pages のプロジェクト `yumeti`）
+- `main` に push すると自動で公開される。ビルド = `bash tools/build-pages.sh` → `dist/` を公開（設定は `wrangler.toml`）。
+- `tools/build-pages.sh` は**公開してよい物だけ**を `dist/` に写す（`_worker/`・README・`go/*.md` は載せない）。新しい公開ファイルを足すときは、このスクリプトが拾うか確認する。
+- 旧URL `https://siraha0611.github.io/yumegatari-official-site/` は**印刷物のQRが指しているので止めない**。GitHub Pages は `gh-redirect` ブランチ（同じパスの新URLへ移すページだけ）を公開している。
+
+### book.html の更新（R2 に置いている）
+
+book.html は 32MB あり Pages の 1 ファイル上限（25MiB）を超えるので、R2 バケット `yumegatari-dl` の `site/book.html` に置き、`functions/book.html.js` が `/book.html` で配っている。リポジトリの `book.html` は控え。暗号化し直したら、コミットに加えて R2 にも上げる:
+
+```
+npx wrangler r2 object put yumegatari-dl/site/book.html --file book.html --content-type "text/html; charset=utf-8" --remote
+```
+
+（`--remote` を忘れるとローカルのシミュレータに書かれて本番は変わらない）
 
 ## ネタバレ範囲について
 

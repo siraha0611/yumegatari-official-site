@@ -1,0 +1,10 @@
+# Cloudflare Pages（プロジェクト名 yumeti / https://yumeti.kaso-kobo.com）の設定。
+# ビルド: bash tools/build-pages.sh → dist/ を公開。functions/ は Pages Functions。
+name = "yumeti"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+# book.html（32MB）の置き場所。functions/book.html.js が読む。
+[[r2_buckets]]
+binding = "SITE_FILES"
+bucket_name = "yumegatari-dl"

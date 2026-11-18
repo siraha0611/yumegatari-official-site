@@ -17,3 +17,5 @@ _backup_*
 _worker/.wrangler/
 _worker/.dev.vars*
 _worker/.env*
+dist/
+.wrangler/
