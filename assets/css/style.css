@@ -1546,3 +1546,57 @@ html{ scroll-padding-top: 92px; }
   .rv-gate, .rv-form{ padding: 22px 18px; }
   .rv-date{ margin-left: 0; width: 100%; }
 }
+
+/* ===== トップ：短い物語（AIと遊ぶ『神応寺透の夢』）への帯（2026-11-21） ===== */
+.short-story{
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 8vw, 96px) 0;
+  background: var(--ink-bg);
+  color: #f3ece0;
+}
+.short-story-bg{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(28,21,11,0.93) 0%, rgba(28,21,11,0.8) 55%, rgba(28,21,11,0.55) 100%),
+    url("../img/bg/03-astrea.webp") center / cover no-repeat;
+}
+.short-story .container{ position: relative; }
+.short-story-kicker{
+  margin: 0 0 10px;
+  color: #e0c27a;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.short-story h2{
+  margin: 0 0 18px;
+  color: #fff8e8;
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  letter-spacing: 0.06em;
+}
+.short-story-lead{
+  max-width: 40em;
+  margin: 0 0 26px;
+  line-height: 2;
+  color: #f3ece0;
+}
+.short-story .cta-row{ margin: 0 0 22px; }
+.short-story .cta-row .btn{ margin-left: 0; }
+.short-story-notes{
+  max-width: 46em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: #cdbf9f;
+}
+@media (max-width: 720px){
+  .short-story-bg{
+    background:
+      linear-gradient(180deg, rgba(28,21,11,0.9) 0%, rgba(28,21,11,0.84) 100%),
+      url("../img/bg/03-astrea.webp") center / cover no-repeat;
+  }
+}
